@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="Guilds/index.html"><strong aria-hidden="true">2.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Guilds/create.html"><strong aria-hidden="true">2.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="Guilds/get.html"><strong aria-hidden="true">2.2.</strong> Get</a></li></ol></li><li class="chapter-item expanded "><a href="user.html"><strong aria-hidden="true">3.</strong> User</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="guilds/index.html"><strong aria-hidden="true">2.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guilds/create.html"><strong aria-hidden="true">2.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="guilds/get.html"><strong aria-hidden="true">2.2.</strong> Get</a></li></ol></li><li class="chapter-item expanded "><a href="users/index.html"><strong aria-hidden="true">3.</strong> User</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -157,13 +157,15 @@ https://api.ferris.chat/v0
 <tr><td>members</td><td>Vec<Member></td><td>list of all the members in a guild</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-guild"><a class="header" href="#create-a-guild">Create a Guild</a></h1>
-<p>In order to create a guild. you must send a POST request to <code>https://ferris.chat/api/v0/users</code>.</p>
+<p>In order to create a guild. you must send a POST request to <code>https://ferris.chat/api/v0/guilds</code>.</p>
 <h4 id="json-payload"><a class="header" href="#json-payload">JSON Payload</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>guild name (must be between 1 and 100 Unicode codepoints)</td></tr>
 </tbody></table>
 <h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>{
+<pre><code>201
+
+{
     &quot;id&quot;: 953168419309560759306499915776,
     &quot;owner_id&quot;: 1,
     &quot;name&quot;: &quot;FerrisChat&quot;,
@@ -178,14 +180,16 @@ https://api.ferris.chat/v0
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-guild"><a class="header" href="#get-a-guild">Get a Guild</a></h1>
-<p>In order to get a guild. you must send a GET request to <code>https://ferris.chat/api/v0/users/{guild_id}</code>.</p>
+<p>In order to get a guild. you must send a GET request to <code>https://ferris.chat/api/v0/guilds/{guild_id}</code>.</p>
 <h4 id="query-params"><a class="header" href="#query-params">Query Params</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th><th>Default</th></tr></thead><tbody>
 <tr><td>members</td><td>boolean</td><td>decides whether a list of members is returned</td><td>false</td><td>false</td></tr>
 <tr><td>channels</td><td>boolean</td><td>decides whether a list of channels is returned</td><td>false</td><td>true</td></tr>
 </tbody></table>
 <h4 id="example-response-1"><a class="header" href="#example-response-1">Example Response</a></h4>
-<pre><code>{
+<pre><code>200
+
+{
     &quot;id&quot;: 953168419309560759306499915776,
     &quot;owner_id&quot;: 1,
     &quot;name&quot;: &quot;FerrisChat&quot;,
@@ -199,16 +203,14 @@ https://api.ferris.chat/v0
     &quot;members&quot;: null
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ferrischat-user"><a class="header" href="#ferrischat-user">FerrisChat User</a></h1>
-<h3 id="create-a-user"><a class="header" href="#create-a-user">Create a User</a></h3>
-<p>In order to create a user, you must send a POST request to <code>https://ferris.chat/api/v0/users</code> with the payload:</p>
-<pre><code>{
-    &quot;username&quot;: username,
-    &quot;email&quot;: email,
-    &quot;password&quot;: password
-}
-</code></pre>
-<p>You will receive a User object back that contains the ID. Do not lose that ID, as you will need it to fetch the user later.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="users"><a class="header" href="#users">Users</a></h1>
+<p>A User object is structured as follows:</p>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td>u128</td><td>user id</td></tr>
+<tr><td>name</td><td>String</td><td>user name</td></tr>
+<tr><td>guilds</td><td>Vec<Guild></td><td>list of all the guilds a user is in</td></tr>
+<tr><td>flags</td><td>i64</td><td>user flags</td></tr>
+</tbody></table>
 
                     </main>
 

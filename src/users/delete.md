@@ -1,0 +1,9 @@
+# Delete a User
+
+In order to delete a guild. you must send a DELETE request to `https://ferris.chat/api/v0/users/{user_id}`.
+
+#### Example Response
+
+```
+204
+```

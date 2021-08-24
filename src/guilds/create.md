@@ -1,6 +1,6 @@
 # Create a Guild
 
-In order to create a guild. you must send a POST request to `https://ferris.chat/api/v0/users`.
+In order to create a guild. you must send a POST request to `https://ferris.chat/api/v0/guilds`.
 
 #### JSON Payload
 | Field | Type | Description |
@@ -10,6 +10,8 @@ In order to create a guild. you must send a POST request to `https://ferris.chat
 #### Example Response
 
 ```
+201
+
 {
     "id": 953168419309560759306499915776,
     "owner_id": 1,
