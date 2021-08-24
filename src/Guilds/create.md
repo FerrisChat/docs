@@ -1,6 +1,6 @@
 # Create a Guild
 
-In order to create a guild. you must send a POST request to `https://ferris.chat/api/v0/users` with the payload:
+In order to create a guild. you must send a POST request to `https://ferris.chat/api/v0/users`.
 
 #### JSON Payload
 | Field | Type | Description |
