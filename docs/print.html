@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="Guilds/index.html"><strong aria-hidden="true">2.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Guilds/create.html"><strong aria-hidden="true">2.1.</strong> Create</a></li></ol></li><li class="chapter-item expanded "><a href="user.html"><strong aria-hidden="true">3.</strong> User</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="Guilds/index.html"><strong aria-hidden="true">2.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Guilds/create.html"><strong aria-hidden="true">2.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="Guilds/get.html"><strong aria-hidden="true">2.2.</strong> Get</a></li></ol></li><li class="chapter-item expanded "><a href="user.html"><strong aria-hidden="true">3.</strong> User</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,6 +163,28 @@ https://api.ferris.chat/v0
 <tr><td>name</td><td>String</td><td>guild name (must be between 1 and 100 Unicode codepoints)</td></tr>
 </tbody></table>
 <h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
+<pre><code>{
+    &quot;id&quot;: 953168419309560759306499915776,
+    &quot;owner_id&quot;: 1,
+    &quot;name&quot;: &quot;FerrisChat&quot;,
+    &quot;channels&quot;: [
+        {
+            &quot;id&quot;: 954985616424781059018601791488,
+            &quot;name&quot;: &quot;general&quot;,
+            &quot;guild_id&quot;: 953168419309560759306499915776
+        }
+    ],
+    &quot;members&quot;: null
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-guild"><a class="header" href="#get-a-guild">Get a Guild</a></h1>
+<p>In order to get a guild. you must send a GET request to <code>https://ferris.chat/api/v0/users/{guild_id}</code>.</p>
+<h4 id="query-params"><a class="header" href="#query-params">Query Params</a></h4>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th><th>Default</th></tr></thead><tbody>
+<tr><td>members</td><td>boolean</td><td>decides whether a list of members is returned</td><td>false</td><td>false</td></tr>
+<tr><td>channels</td><td>boolean</td><td>decides whether a list of channels is returned</td><td>false</td><td>true</td></tr>
+</tbody></table>
+<h4 id="example-response-1"><a class="header" href="#example-response-1">Example Response</a></h4>
 <pre><code>{
     &quot;id&quot;: 953168419309560759306499915776,
     &quot;owner_id&quot;: 1,
