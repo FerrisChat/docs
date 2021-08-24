@@ -162,7 +162,21 @@ https://api.ferris.chat/v0
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>guild name (must be between 1 and 100 Unicode codepoints)</td></tr>
 </tbody></table>
-<p>You will receive a Guild object back that contains the ID. Do not lose that ID, as you will need it to fetch the guild.</p>
+<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
+<pre><code>{
+    &quot;id&quot;: 953168419309560759306499915776,
+    &quot;owner_id&quot;: 1,
+    &quot;name&quot;: &quot;FerrisChat&quot;,
+    &quot;channels&quot;: [
+        {
+            &quot;id&quot;: 954985616424781059018601791488,
+            &quot;name&quot;: &quot;general&quot;,
+            &quot;guild_id&quot;: 953168419309560759306499915776
+        }
+    ],
+    &quot;members&quot;: null
+}
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ferrischat-user"><a class="header" href="#ferrischat-user">FerrisChat User</a></h1>
 <h3 id="create-a-user"><a class="header" href="#create-a-user">Create a User</a></h3>
 <p>In order to create a user, you must send a POST request to <code>https://ferris.chat/api/v0/users</code> with the payload:</p>

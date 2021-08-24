@@ -7,4 +7,20 @@ In order to create a guild. you must send a POST request to `https://ferris.chat
 | ----- | ---- | ----------- |
 | name | String | guild name (must be between 1 and 100 Unicode codepoints) |
 
-You will receive a Guild object back that contains the ID. Do not lose that ID, as you will need it to fetch the guild.
+#### Example Response
+
+```
+{
+    "id": 953168419309560759306499915776,
+    "owner_id": 1,
+    "name": "FerrisChat",
+    "channels": [
+        {
+            "id": 954985616424781059018601791488,
+            "name": "general",
+            "guild_id": 953168419309560759306499915776
+        }
+    ],
+    "members": null
+}
+```
