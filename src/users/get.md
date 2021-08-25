@@ -6,7 +6,7 @@ In order to get a user, you must send a GET request to `https://ferris.chat/api/
 #### Example Response
 
 ```
-200
+200 OK
 
 {
     "id": 1,

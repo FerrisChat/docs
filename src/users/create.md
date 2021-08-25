@@ -12,7 +12,7 @@ In order to create a user. you must send a POST request to `https://ferris.chat/
 #### Example Response
 
 ```
-201
+201 CREATED
 
 {
     "id": 1,

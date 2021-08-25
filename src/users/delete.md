@@ -5,5 +5,5 @@ In order to delete a guild. you must send a DELETE request to `https://ferris.ch
 #### Example Response
 
 ```
-204
+204 NO CONTENT
 ```

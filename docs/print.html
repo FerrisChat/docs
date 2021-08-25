@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="guilds/index.html"><strong aria-hidden="true">2.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guilds/create.html"><strong aria-hidden="true">2.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="guilds/get.html"><strong aria-hidden="true">2.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="guilds/delete.html"><strong aria-hidden="true">2.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="users/index.html"><strong aria-hidden="true">3.</strong> User</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="users/create.html"><strong aria-hidden="true">3.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="users/get.html"><strong aria-hidden="true">3.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="users/delete.html"><strong aria-hidden="true">3.3.</strong> Delete</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="guilds/index.html"><strong aria-hidden="true">2.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guilds/create.html"><strong aria-hidden="true">2.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="guilds/get.html"><strong aria-hidden="true">2.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="guilds/delete.html"><strong aria-hidden="true">2.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="users/index.html"><strong aria-hidden="true">3.</strong> User</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="users/create.html"><strong aria-hidden="true">3.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="users/get.html"><strong aria-hidden="true">3.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="users/delete.html"><strong aria-hidden="true">3.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="channels/index.html"><strong aria-hidden="true">4.</strong> Channel</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="channels/create.html"><strong aria-hidden="true">4.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="channels/get.html"><strong aria-hidden="true">4.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="channels/delete.html"><strong aria-hidden="true">4.3.</strong> Delete</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,7 +163,7 @@ https://api.ferris.chat/v0
 <tr><td>name</td><td>String</td><td>guild name (must be between 1 and 100 Unicode codepoints)</td></tr>
 </tbody></table>
 <h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>201
+<pre><code>201 CREATED
 
 {
     &quot;id&quot;: 953168419309560759306499915776,
@@ -187,7 +187,7 @@ https://api.ferris.chat/v0
 <tr><td>channels</td><td>boolean</td><td>decides whether a list of channels is returned</td><td>false</td><td>true</td></tr>
 </tbody></table>
 <h4 id="example-response-1"><a class="header" href="#example-response-1">Example Response</a></h4>
-<pre><code>200
+<pre><code>200 OK
 
 {
     &quot;id&quot;: 953168419309560759306499915776,
@@ -206,7 +206,7 @@ https://api.ferris.chat/v0
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-guild"><a class="header" href="#delete-a-guild">Delete a Guild</a></h1>
 <p>In order to delete a guild. you must send a DELETE request to <code>https://ferris.chat/api/v0/guilds/{guild_id}</code>.</p>
 <h4 id="example-response-2"><a class="header" href="#example-response-2">Example Response</a></h4>
-<pre><code>204
+<pre><code>204 NO CONTENT
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="users"><a class="header" href="#users">Users</a></h1>
 <p>A User object is structured as follows:</p>
@@ -225,7 +225,7 @@ https://api.ferris.chat/v0
 <tr><td>password</td><td>String</td><td>a users password</td></tr>
 </tbody></table>
 <h4 id="example-response-3"><a class="header" href="#example-response-3">Example Response</a></h4>
-<pre><code>201
+<pre><code>201 CREATED
 
 {
     &quot;id&quot;: 1,
@@ -237,7 +237,7 @@ https://api.ferris.chat/v0
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-user"><a class="header" href="#get-a-user">Get a User</a></h1>
 <p>In order to get a user, you must send a GET request to <code>https://ferris.chat/api/v0/users/{user_id}</code>.</p>
 <h4 id="example-response-4"><a class="header" href="#example-response-4">Example Response</a></h4>
-<pre><code>200
+<pre><code>200 OK
 
 {
     &quot;id&quot;: 1,
@@ -249,7 +249,45 @@ https://api.ferris.chat/v0
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-user"><a class="header" href="#delete-a-user">Delete a User</a></h1>
 <p>In order to delete a guild. you must send a DELETE request to <code>https://ferris.chat/api/v0/users/{user_id}</code>.</p>
 <h4 id="example-response-5"><a class="header" href="#example-response-5">Example Response</a></h4>
-<pre><code>204
+<pre><code>204 NO CONTENT
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="channels"><a class="header" href="#channels">Channels</a></h1>
+<p>A Channel object is structured as follows:</p>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td>u128</td><td>channel id</td></tr>
+<tr><td>name</td><td>String</td><td>channel name</td></tr>
+<tr><td>guild_id</td><td>u128</td><td>id of the guild the channel is in</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-channel"><a class="header" href="#create-a-channel">Create a Channel</a></h1>
+<p>In order to create a channel, you must send a POST request to <code>https://ferris.chat/api/v0/channels</code>.</p>
+<h4 id="json-payload-2"><a class="header" href="#json-payload-2">JSON Payload</a></h4>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td>String</td><td>channel's name</td></tr>
+</tbody></table>
+<h4 id="example-response-6"><a class="header" href="#example-response-6">Example Response</a></h4>
+<pre><code>200 OK
+
+{
+    &quot;id&quot;: 954985616424781059018601791488,
+    &quot;name&quot;: &quot;general&quot;,
+    &quot;guild_id&quot;: 953168419309560759306499915776
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-channel"><a class="header" href="#get-a-channel">Get a Channel</a></h1>
+<p>In order to get a channel, you must send a GET request to <code>https://ferris.chat/api/v0/channel/{channel_id}</code>.</p>
+<h4 id="example-response-7"><a class="header" href="#example-response-7">Example Response</a></h4>
+<pre><code>200 OK
+
+{
+    &quot;id&quot;: 954985616424781059018601791488,
+    &quot;name&quot;: &quot;general&quot;,
+    &quot;guild_id&quot;: 953168419309560759306499915776
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-channel"><a class="header" href="#delete-a-channel">Delete a Channel</a></h1>
+<p>In order to delete a channel. you must send a DELETE request to <code>https://ferris.chat/api/v0/channels/{channel_id}</code>.</p>
+<h4 id="example-response-8"><a class="header" href="#example-response-8">Example Response</a></h4>
+<pre><code>204 NO CONTENT
 </code></pre>
 
                     </main>

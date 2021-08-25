@@ -11,7 +11,7 @@ In order to get a guild. you must send a GET request to `https://ferris.chat/api
 #### Example Response
 
 ```
-200
+200 OK
 
 {
     "id": 953168419309560759306499915776,

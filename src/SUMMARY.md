@@ -9,3 +9,7 @@
     - [Create](./users/create.md)
     - [Get](./users/get.md)
     - [Delete](./users/delete.md)
+- [Channel](./channels/README.md)
+    - [Create](./channels/create.md)
+    - [Get](./channels/get.md)
+    - [Delete](./channels/delete.md)

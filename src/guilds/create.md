@@ -10,7 +10,7 @@ In order to create a guild. you must send a POST request to `https://ferris.chat
 #### Example Response
 
 ```
-201
+201 CREATED
 
 {
     "id": 953168419309560759306499915776,
