@@ -15,3 +15,7 @@
     - [Create](./channels/create.md)
     - [Get](./channels/get.md)
     - [Delete](./channels/delete.md)
+- [Messages](./messages/README.md)
+    - [send](./messages/send.md)
+    - [Get](./messages/get.md)
+    - [Delete](./messages/delete.md)

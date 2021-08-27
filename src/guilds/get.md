@@ -1,6 +1,6 @@
 # Get a Guild
 
-In order to get a guild. you must send a GET request to `https://ferris.chat/api/v0/guilds/{guild_id}`.
+In order to get a guild, you must send a GET request to `https://ferris.chat/api/v0/guilds/{guild_id}`.
 
 #### Query Params
 | Field | Type | Description | Required | Default |
