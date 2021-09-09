@@ -19,3 +19,5 @@
     - [Send](./messages/send.md)
     - [Get](./messages/get.md)
     - [Delete](./messages/delete.md)
+- [Websocket](./ws/close_codes.md)
+    - [Close Codes](./ws/close_codes.md)

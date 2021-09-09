@@ -4,7 +4,7 @@ Sometimes sh\*t happens. Connections get closed for random reasons. Here, most o
 
 ## Undocumented Codes
 
-If a code is not documented here, but you recieve it anyways, you can probably safely assume it's a bug (or perhaps a mistake in the docs).
+If a code is not documented here, but you receive it anyways, you can probably safely assume it's a bug (or perhaps a mistake in the docs).
 Open a issue on the server repo.
 
 ## 1xxx Codes

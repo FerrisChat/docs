@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="auth/login.html"><strong aria-hidden="true">2.</strong> Authentication</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="auth/login.html"><strong aria-hidden="true">2.1.</strong> Login</a></li></ol></li><li class="chapter-item expanded "><a href="guilds/index.html"><strong aria-hidden="true">3.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guilds/create.html"><strong aria-hidden="true">3.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="guilds/get.html"><strong aria-hidden="true">3.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="guilds/delete.html"><strong aria-hidden="true">3.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="users/index.html"><strong aria-hidden="true">4.</strong> User</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="users/create.html"><strong aria-hidden="true">4.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="users/get.html"><strong aria-hidden="true">4.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="users/delete.html"><strong aria-hidden="true">4.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="channels/index.html"><strong aria-hidden="true">5.</strong> Channel</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="channels/create.html"><strong aria-hidden="true">5.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="channels/get.html"><strong aria-hidden="true">5.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="channels/delete.html"><strong aria-hidden="true">5.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="messages/index.html"><strong aria-hidden="true">6.</strong> Messages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages/send.html"><strong aria-hidden="true">6.1.</strong> Send</a></li><li class="chapter-item expanded "><a href="messages/get.html"><strong aria-hidden="true">6.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="messages/delete.html"><strong aria-hidden="true">6.3.</strong> Delete</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Index</a></li><li class="chapter-item expanded "><a href="auth/login.html"><strong aria-hidden="true">2.</strong> Authentication</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="auth/login.html"><strong aria-hidden="true">2.1.</strong> Login</a></li></ol></li><li class="chapter-item expanded "><a href="guilds/index.html"><strong aria-hidden="true">3.</strong> Guilds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guilds/create.html"><strong aria-hidden="true">3.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="guilds/get.html"><strong aria-hidden="true">3.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="guilds/delete.html"><strong aria-hidden="true">3.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="users/index.html"><strong aria-hidden="true">4.</strong> User</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="users/create.html"><strong aria-hidden="true">4.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="users/get.html"><strong aria-hidden="true">4.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="users/delete.html"><strong aria-hidden="true">4.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="channels/index.html"><strong aria-hidden="true">5.</strong> Channel</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="channels/create.html"><strong aria-hidden="true">5.1.</strong> Create</a></li><li class="chapter-item expanded "><a href="channels/get.html"><strong aria-hidden="true">5.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="channels/delete.html"><strong aria-hidden="true">5.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="messages/index.html"><strong aria-hidden="true">6.</strong> Messages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages/send.html"><strong aria-hidden="true">6.1.</strong> Send</a></li><li class="chapter-item expanded "><a href="messages/get.html"><strong aria-hidden="true">6.2.</strong> Get</a></li><li class="chapter-item expanded "><a href="messages/delete.html"><strong aria-hidden="true">6.3.</strong> Delete</a></li></ol></li><li class="chapter-item expanded "><a href="ws/close_codes.html"><strong aria-hidden="true">7.</strong> Websocket</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ws/close_codes.html"><strong aria-hidden="true">7.1.</strong> Close Codes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -273,7 +273,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-user"><a class="header" href="#delete-a-user">Delete a User</a></h1>
-<p>In order to delete a guild, you must send a DELETE request to <code>https://ferris.chat/api/v0/users/{user_id}</code>.</p>
+<p>In order to delete a user, you must send a DELETE request to <code>https://ferris.chat/api/v0/users/{user_id}</code>.</p>
 <h4 id="example-response-7"><a class="header" href="#example-response-7">Example Response</a></h4>
 <pre><code>204 NO CONTENT
 </code></pre>
@@ -285,7 +285,7 @@ Password: password
 <tr><td>guild_id</td><td>u128</td><td>id of the guild the channel is in</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-channel"><a class="header" href="#create-a-channel">Create a Channel</a></h1>
-<p>In order to create a channel, you must send a POST request to <code>https://ferris.chat/api/v0/channels</code>.</p>
+<p>In order to create a channel, you must send a POST request to <code>https://ferris.chat/api/v0/guilds/{guild_id}/channels</code>.</p>
 <h4 id="json-payload-2"><a class="header" href="#json-payload-2">JSON Payload</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>channel's name</td></tr>
@@ -356,6 +356,80 @@ Password: password
 <h4 id="example-response-13"><a class="header" href="#example-response-13">Example Response</a></h4>
 <pre><code>204 NO CONTENT
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="websocket-close-codes"><a class="header" href="#websocket-close-codes">WebSocket Close Codes</a></h1>
+<p>Sometimes sh*t happens. Connections get closed for random reasons. Here, most of the close reasons for the WebSocket are documented.</p>
+<h2 id="undocumented-codes"><a class="header" href="#undocumented-codes">Undocumented Codes</a></h2>
+<p>If a code is not documented here, but you receive it anyways, you can probably safely assume it's a bug (or perhaps a mistake in the docs).
+Open a issue on the server repo.</p>
+<h2 id="1xxx-codes"><a class="header" href="#1xxx-codes">1xxx Codes</a></h2>
+<p>These are usually lower-level transport errors, but some are user error.</p>
+<table><thead><tr><th>Code</th><th>Reason</th><th>Get new endpoint?</th><th>User Error?</th></tr></thead><tbody>
+<tr><td>1000</td><td>Normal</td><td>N/A (conn closed normally)</td><td>No</td></tr>
+<tr><td>1001</td><td>Endpoint going away</td><td>Yes</td><td>No</td></tr>
+<tr><td>1002</td><td>Low-level protocol error</td><td>Yes</td><td>No</td></tr>
+<tr><td>1003</td><td>Unsupported data type/info sent</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1006</td><td>Abnormal closure (this is a bug)</td><td>Yes</td><td>No (bug)</td></tr>
+<tr><td>1007</td><td>Invalid data (ie non-UTF8 in text msg)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1008</td><td>Data violating policy</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1009</td><td>Payload too large</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1011</td><td>Internal server error</td><td>No</td><td>No</td></tr>
+<tr><td>1012</td><td>Backend server restarting</td><td>No</td><td>No</td></tr>
+<tr><td>1013</td><td>Server overloaded</td><td>No</td><td>No</td></tr>
+<tr><td>1014</td><td>I/O error on underlying TCP socket</td><td>No</td><td>No</td></tr>
+<tr><td>1015</td><td>TLS error</td><td>No</td><td>Maybe?</td></tr>
+<tr><td>1016</td><td>Buffer capacity exhausted</td><td>No</td><td>Maybe?</td></tr>
+<tr><td>1017</td><td>Invalid URL</td><td>No</td><td>Yes</td></tr>
+<tr><td>1018</td><td>HTTP protocol error</td><td>No</td><td>Maybe?</td></tr>
+<tr><td>1019</td><td>HTTP format error</td><td>No</td><td>Maybe?</td></tr>
+</tbody></table>
+<h2 id="2xxx-codes"><a class="header" href="#2xxx-codes">2xxx Codes</a></h2>
+<p>These are user errors.</p>
+<table><thead><tr><th>Code</th><th>Reason</th></tr></thead><tbody>
+<tr><td>2001</td><td>Invalid JSON</td></tr>
+</tbody></table>
+<h2 id="5xxx-codes"><a class="header" href="#5xxx-codes">5xxx Codes</a></h2>
+<p>These are internal server errors. These are almost always the result of a bug, or perhaps a simple database reconnect that came at a bad time.</p>
+<table><thead><tr><th>Code</th><th>Reason</th></tr></thead><tbody>
+<tr><td>5000</td><td>Internal database error</td></tr>
+<tr><td>5001</td><td>JSON serialization failure</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="websocket-close-codes-1"><a class="header" href="#websocket-close-codes-1">WebSocket Close Codes</a></h1>
+<p>Sometimes sh*t happens. Connections get closed for random reasons. Here, most of the close reasons for the WebSocket are documented.</p>
+<h2 id="undocumented-codes-1"><a class="header" href="#undocumented-codes-1">Undocumented Codes</a></h2>
+<p>If a code is not documented here, but you receive it anyways, you can probably safely assume it's a bug (or perhaps a mistake in the docs).
+Open a issue on the server repo.</p>
+<h2 id="1xxx-codes-1"><a class="header" href="#1xxx-codes-1">1xxx Codes</a></h2>
+<p>These are usually lower-level transport errors, but some are user error.</p>
+<table><thead><tr><th>Code</th><th>Reason</th><th>Get new endpoint?</th><th>User Error?</th></tr></thead><tbody>
+<tr><td>1000</td><td>Normal</td><td>N/A (conn closed normally)</td><td>No</td></tr>
+<tr><td>1001</td><td>Endpoint going away</td><td>Yes</td><td>No</td></tr>
+<tr><td>1002</td><td>Low-level protocol error</td><td>Yes</td><td>No</td></tr>
+<tr><td>1003</td><td>Unsupported data type/info sent</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1006</td><td>Abnormal closure (this is a bug)</td><td>Yes</td><td>No (bug)</td></tr>
+<tr><td>1007</td><td>Invalid data (ie non-UTF8 in text msg)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1008</td><td>Data violating policy</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1009</td><td>Payload too large</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>1011</td><td>Internal server error</td><td>No</td><td>No</td></tr>
+<tr><td>1012</td><td>Backend server restarting</td><td>No</td><td>No</td></tr>
+<tr><td>1013</td><td>Server overloaded</td><td>No</td><td>No</td></tr>
+<tr><td>1014</td><td>I/O error on underlying TCP socket</td><td>No</td><td>No</td></tr>
+<tr><td>1015</td><td>TLS error</td><td>No</td><td>Maybe?</td></tr>
+<tr><td>1016</td><td>Buffer capacity exhausted</td><td>No</td><td>Maybe?</td></tr>
+<tr><td>1017</td><td>Invalid URL</td><td>No</td><td>Yes</td></tr>
+<tr><td>1018</td><td>HTTP protocol error</td><td>No</td><td>Maybe?</td></tr>
+<tr><td>1019</td><td>HTTP format error</td><td>No</td><td>Maybe?</td></tr>
+</tbody></table>
+<h2 id="2xxx-codes-1"><a class="header" href="#2xxx-codes-1">2xxx Codes</a></h2>
+<p>These are user errors.</p>
+<table><thead><tr><th>Code</th><th>Reason</th></tr></thead><tbody>
+<tr><td>2001</td><td>Invalid JSON</td></tr>
+</tbody></table>
+<h2 id="5xxx-codes-1"><a class="header" href="#5xxx-codes-1">5xxx Codes</a></h2>
+<p>These are internal server errors. These are almost always the result of a bug, or perhaps a simple database reconnect that came at a bad time.</p>
+<table><thead><tr><th>Code</th><th>Reason</th></tr></thead><tbody>
+<tr><td>5000</td><td>Internal database error</td></tr>
+<tr><td>5001</td><td>JSON serialization failure</td></tr>
+</tbody></table>
 
                     </main>
 
