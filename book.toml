@@ -1,5 +1,5 @@
 [book]
-authors = ["FerrisChat <crates@ferris.chat>"]
+authors = ["FerrisChat Team <crates@ferris.chat>"]
 language = "en"
 multilingual = false
 src = "src"
