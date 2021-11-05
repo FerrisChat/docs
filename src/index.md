@@ -8,7 +8,7 @@ We're so glad that you decided to check out our API and possibly build something
 
 The following endpoints may be used to connect:
 ```
-https://ferris.chat/api/v0
+https://ferris.chat/api/v0 (deprecated)
 https://api.ferris.chat/v0
 ```
 
@@ -19,3 +19,7 @@ Bugs are bound to occur, so if you find one, please file it [here](https://githu
 ### Bot Development Communities
 
 Currently there are no established bot development communities, so check back here soon!
+
+### Ping Endpoint
+
+If you just wish to see if the API is online, either check [the status page](https://status.ferris.chat), or request `GET https://api.ferris.chat/v0/ping`. It will return a `200 OK` if online.
