@@ -1,6 +1,6 @@
 # Get a Channel
 
-In order to get a channel, you must send a GET request to `https://ferris.chat/api/v0/channel/{channel_id}`.
+In order to get a channel, you must send a GET request to `https:://api.ferris.chat/v0/channel/{channel_id}`.
 
 
 #### Example Response

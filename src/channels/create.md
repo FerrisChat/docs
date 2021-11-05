@@ -1,6 +1,6 @@
 # Create a Channel
 
-In order to create a channel, you must send a POST request to `https://ferris.chat/api/v0/guilds/{guild_id}/channels`.
+In order to create a channel, you must send a POST request to `https://api.ferris.chat/v0/guilds/{guild_id}/channels`.
 
 #### JSON Payload
 | Field | Type | Description |

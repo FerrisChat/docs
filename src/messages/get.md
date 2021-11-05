@@ -1,6 +1,6 @@
 # Get a Message
 
-In order to get a message, you must send a GET request to `https://ferris.chat/api/v0/channels/{channel_id}/messages/{message_id}`.
+In order to get a message, you must send a GET request to `https://api.ferris.chat/v0/channels/{channel_id}/messages/{message_id}`.
 
 #### Example Response
 
