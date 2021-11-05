@@ -185,7 +185,7 @@ Password: password
 <tr><td>members</td><td>Vec<Member></td><td>list of all the members in a guild</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-guild"><a class="header" href="#create-a-guild">Create a Guild</a></h1>
-<p>In order to create a guild, you must send a POST request to <code>https://ferris.chat/api/v0/guilds</code>.</p>
+<p>In order to create a guild, you must send a POST request to <code>https://api.ferris.chat/v0/guilds</code>.</p>
 <h4 id="json-payload"><a class="header" href="#json-payload">JSON Payload</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>guild name (must be between 1 and 100 Unicode codepoints)</td></tr>
@@ -208,7 +208,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-guild"><a class="header" href="#get-a-guild">Get a Guild</a></h1>
-<p>In order to get a guild, you must send a GET request to <code>https://ferris.chat/api/v0/guilds/{guild_id}</code>.</p>
+<p>In order to get a guild, you must send a GET request to <code>https://api.ferris.chat/v0/guilds/{guild_id}</code>.</p>
 <h4 id="query-params"><a class="header" href="#query-params">Query Params</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th><th>Default</th></tr></thead><tbody>
 <tr><td>members</td><td>boolean</td><td>decides whether a list of members is returned</td><td>false</td><td>false</td></tr>
@@ -232,7 +232,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-guild"><a class="header" href="#delete-a-guild">Delete a Guild</a></h1>
-<p>In order to delete a guild, you must send a DELETE request to <code>https://ferris.chat/api/v0/guilds/{guild_id}</code>.</p>
+<p>In order to delete a guild, you must send a DELETE request to <code>https://api.ferris.chat/v0/guilds/{guild_id}</code>.</p>
 <h4 id="example-response-4"><a class="header" href="#example-response-4">Example Response</a></h4>
 <pre><code>204 NO CONTENT
 </code></pre>
@@ -245,7 +245,7 @@ Password: password
 <tr><td>flags</td><td>i64</td><td>user flags</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-user"><a class="header" href="#create-a-user">Create a User</a></h1>
-<p>In order to create a user, you must send a POST request to <code>https://ferris.chat/api/v0/users</code>.</p>
+<p>In order to create a user, you must send a POST request to <code>https://api.ferris.chat/v0/users</code>.</p>
 <h4 id="json-payload-1"><a class="header" href="#json-payload-1">JSON Payload</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>username</td><td>String</td><td>user's preferred name</td></tr>
@@ -263,7 +263,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-user"><a class="header" href="#get-a-user">Get a User</a></h1>
-<p>In order to get a user, you must send a GET request to <code>https://ferris.chat/api/v0/users/{user_id}</code>.</p>
+<p>In order to get a user, you must send a GET request to <code>https://api.ferris.chat/v0/users/{user_id}</code>.</p>
 <h4 id="example-response-6"><a class="header" href="#example-response-6">Example Response</a></h4>
 <pre><code>200 OK
 
@@ -275,7 +275,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-user"><a class="header" href="#delete-a-user">Delete a User</a></h1>
-<p>In order to delete a user, you must send a DELETE request to <code>https://ferris.chat/api/v0/users/{user_id}</code>.</p>
+<p>In order to delete a user, you must send a DELETE request to <code>https://api.ferris.chat/v0/users/{user_id}</code>.</p>
 <h4 id="example-response-7"><a class="header" href="#example-response-7">Example Response</a></h4>
 <pre><code>204 NO CONTENT
 </code></pre>
@@ -287,7 +287,7 @@ Password: password
 <tr><td>guild_id</td><td>u128</td><td>id of the guild the channel is in</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-channel"><a class="header" href="#create-a-channel">Create a Channel</a></h1>
-<p>In order to create a channel, you must send a POST request to <code>https://ferris.chat/api/v0/guilds/{guild_id}/channels</code>.</p>
+<p>In order to create a channel, you must send a POST request to <code>https://api.ferris.chat/v0/guilds/{guild_id}/channels</code>.</p>
 <h4 id="json-payload-2"><a class="header" href="#json-payload-2">JSON Payload</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>channel's name</td></tr>
@@ -302,7 +302,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-channel"><a class="header" href="#get-a-channel">Get a Channel</a></h1>
-<p>In order to get a channel, you must send a GET request to <code>https://ferris.chat/api/v0/channel/{channel_id}</code>.</p>
+<p>In order to get a channel, you must send a GET request to <code>https:://api.ferris.chat/v0/channel/{channel_id}</code>.</p>
 <h4 id="example-response-9"><a class="header" href="#example-response-9">Example Response</a></h4>
 <pre><code>200 OK
 
@@ -313,7 +313,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-channel"><a class="header" href="#delete-a-channel">Delete a Channel</a></h1>
-<p>In order to delete a channel, you must send a DELETE request to <code>https://ferris.chat/api/v0/channels/{channel_id}</code>.</p>
+<p>In order to delete a channel, you must send a DELETE request to <code>https://api.ferris.chat/v0/channels/{channel_id}</code>.</p>
 <h4 id="example-response-10"><a class="header" href="#example-response-10">Example Response</a></h4>
 <pre><code>204 NO CONTENT
 </code></pre>
@@ -326,7 +326,7 @@ Password: password
 <tr><td>channel_id</td><td>u128</td><td>message channel's id</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="send-a-message"><a class="header" href="#send-a-message">Send a Message</a></h1>
-<p>In order to send a message, you must send a POST request to <code>https://ferris.chat/api/v0/channels/{channel_id}/messages</code>.</p>
+<p>In order to send a message, you must send a POST request to <code>https://api.ferris.chat/v0/channels/{channel_id}/messages</code>.</p>
 <h4 id="json-payload-3"><a class="header" href="#json-payload-3">JSON Payload</a></h4>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>content</td><td>String</td><td>message content (must be at or below 10240 characters)</td></tr>
@@ -342,7 +342,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-message"><a class="header" href="#get-a-message">Get a Message</a></h1>
-<p>In order to get a message, you must send a GET request to <code>https://ferris.chat/api/v0/channels/{channel_id}/messages/{message_id}</code>.</p>
+<p>In order to get a message, you must send a GET request to <code>https://api.ferris.chat/v0/channels/{channel_id}/messages/{message_id}</code>.</p>
 <h4 id="example-response-12"><a class="header" href="#example-response-12">Example Response</a></h4>
 <pre><code>200 OK
 
@@ -354,7 +354,7 @@ Password: password
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-message"><a class="header" href="#delete-a-message">Delete a Message</a></h1>
-<p>In order to delete a message, you must send a DELETE request to <code>https://ferris.chat/api/v0/channels/{message_id}/messages/{message_id}</code>.</p>
+<p>In order to delete a message, you must send a DELETE request to <code>https://api.ferris.chat/v0/channels/{message_id}/messages/{message_id}</code>.</p>
 <h4 id="example-response-13"><a class="header" href="#example-response-13">Example Response</a></h4>
 <pre><code>204 NO CONTENT
 </code></pre>
