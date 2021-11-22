@@ -135,29 +135,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="get-a-guild"><a class="header" href="#get-a-guild">Get a Guild</a></h1>
-<p>In order to get a guild, you must send a GET request to <code>https://api.ferris.chat/v0/guilds/{guild_id}</code>.</p>
-<h4 id="query-params"><a class="header" href="#query-params">Query Params</a></h4>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>GET <code>/guilds/{guild_id}</code></p>
+<h3 id="query-parameters"><a class="header" href="#query-parameters">Query Parameters</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th><th>Default</th></tr></thead><tbody>
-<tr><td>members</td><td>boolean</td><td>decides whether a list of members is returned</td><td>false</td><td>false</td></tr>
-<tr><td>channels</td><td>boolean</td><td>decides whether a list of channels is returned</td><td>false</td><td>true</td></tr>
+<tr><td>members</td><td>boolean</td><td>return a list of members?</td><td>false</td><td>false</td></tr>
+<tr><td>channels</td><td>boolean</td><td>return a list of channels?</td><td>false</td><td>true</td></tr>
 </tbody></table>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 953168419309560759306499915776,
-    &quot;owner_id&quot;: 1,
-    &quot;name&quot;: &quot;FerrisChat&quot;,
-    &quot;channels&quot;: [
-        {
-            &quot;id&quot;: 954985616424781059018601791488,
-            &quot;name&quot;: &quot;general&quot;,
-            &quot;guild_id&quot;: 953168419309560759306499915776
-        }
-    ],
-    &quot;members&quot;: null
-}
-</code></pre>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="200-ok"><a class="header" href="#200-ok">200 OK</a></h3>
+<p>Payload: requested guild object</p>
+<h3 id="404-not-found"><a class="header" href="#404-not-found">404 Not Found</a></h3>
+<p>Payload: description of this missing object</p>
 
                     </main>
 

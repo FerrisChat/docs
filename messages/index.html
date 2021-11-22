@@ -139,8 +139,12 @@
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>u128</td><td>message id</td></tr>
 <tr><td>content</td><td>String</td><td>message content</td></tr>
-<tr><td>author_id</td><td>u128</td><td>message author's id</td></tr>
 <tr><td>channel_id</td><td>u128</td><td>message channel's id</td></tr>
+<tr><td>author_id</td><td>u128</td><td>message author's id</td></tr>
+<tr><td>author</td><td>Option&lt;User&gt;</td><td>author of this message</td></tr>
+<tr><td>edited_at</td><td>Option&lt;PrimitiveDateTime&gt;</td><td>the last time this message was edited</td></tr>
+<tr><td>embeds</td><td>Vec&lt;Embed&gt;</td><td>a list of embeds in this message</td></tr>
+<tr><td>nonce</td><td>Option&lt;String&gt;</td><td>nonce of this message: is not stored in DB so is none everywhere except for the WebSocket event and returned object from HTTP</td></tr>
 </tbody></table>
 
                     </main>

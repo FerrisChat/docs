@@ -135,10 +135,12 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="delete-a-channel"><a class="header" href="#delete-a-channel">Delete a Channel</a></h1>
-<p>In order to delete a channel, you must send a DELETE request to <code>https://api.ferris.chat/v0/channels/{channel_id}</code>.</p>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>204 NO CONTENT
-</code></pre>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>DELETE <code>/channels/{channel_id}</code></p>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="204-no-content"><a class="header" href="#204-no-content">204 No Content</a></h3>
+<h3 id="404-not-found"><a class="header" href="#404-not-found">404 Not Found</a></h3>
+<p>Payload: JSON object describing the unknown channel.</p>
 
                     </main>
 

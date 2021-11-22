@@ -135,17 +135,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="get-a-message"><a class="header" href="#get-a-message">Get a Message</a></h1>
-<p>In order to get a message, you must send a GET request to <code>https://api.ferris.chat/v0/channels/{channel_id}/messages/{message_id}</code>.</p>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 962733210640370448862516609024,
-    &quot;content&quot;: &quot;FerrisChat FTW&quot;,
-    &quot;channel_id&quot;: 954985616424781059018601791488,
-    &quot;author_id&quot;: 1
-}
-</code></pre>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>GET <code>/channels/{channel_id}/messages/{message_id}</code></p>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="200-ok"><a class="header" href="#200-ok">200 OK</a></h3>
+<p>Payload: message object</p>
+<p>Note that <code>nonce</code> will be None.</p>
+<h3 id="404-not-found"><a class="header" href="#404-not-found">404 Not Found</a></h3>
+<p>Payload: details about the missing object.</p>
 
                     </main>
 

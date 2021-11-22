@@ -134,26 +134,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="websocket"><a class="header" href="#websocket">WebSocket</a></h1>
-<p>The FerrisChat websocket is connectable via the url sent by <code>https://api.ferris.chat/v0/ws/info</code>.
-It is important <strong>NOT HARDCODE</strong> this url, as it is subject to change.</p>
-<p>The following events are currently sent:</p>
-<table><thead><tr><th>Name</th><th>When Fired</th><th>Format</th></tr></thead><tbody>
-<tr><td>ChannelCreate</td><td>on channel create</td><td><code>channel_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>ChannelUpdate</td><td>on channel edit</td><td><code>channel_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>ChannelDelete</td><td>on channel delete</td><td><code>channel_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>MessageCreate</td><td>on message send</td><td><code>message_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>MessageUpdate</td><td>on message edit</td><td><code>message_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>MessageDelete</td><td>on message delete</td><td><code>message_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>GuildCreate</td><td>on guild create</td><td><code>guild_{guild_id}</code></td></tr>
-<tr><td>GuildUpdate</td><td>on guild edit</td><td><code>guild_{guild_id}</code></td></tr>
-<tr><td>GuildDelete</td><td>on guild delete</td><td><code>guild_{guild_id}</code></td></tr>
-<tr><td>MemberCreate</td><td>on member join</td><td><code>member_{guild_id}</code></td></tr>
-<tr><td>MemberDelete</td><td>on member leave</td><td><code>member_{guild_id}</code></td></tr>
-<tr><td>InviteCreate</td><td>on invite create</td><td><code>invite_{guild_id}</code></td></tr>
-<tr><td>InviteUse</td><td>on invite use</td><td><code>invite_{guild_id}</code></td></tr>
-<tr><td>InviteDelete</td><td>on invite delete</td><td><code>invite_{guild_id}</code></td></tr>
-</tbody></table>
+                        <h1 id="websocket"><a class="header" href="#websocket">Websocket</a></h1>
+<p>The WebSocket is the main way to get updated on new data from FerrisChat.
+Some bots/clients will not need it, which is fine: there's no requirement to use it.</p>
 
                     </main>
 

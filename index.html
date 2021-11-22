@@ -148,6 +148,29 @@ https://api.ferris.chat/v0
 <p>Currently there are no established bot development communities, so check back here soon!</p>
 <h3 id="ping-endpoint"><a class="header" href="#ping-endpoint">Ping Endpoint</a></h3>
 <p>If you just wish to see if the API is online, either check <a href="https://status.ferris.chat">the status page</a>, or request <code>GET https://api.ferris.chat/v0/ping</code>. It will return a <code>200 OK</code> if online.</p>
+<h3 id="implicit-return-codes"><a class="header" href="#implicit-return-codes">Implicit Return Codes</a></h3>
+<p>All endpoints should be assumed to return HTTP 500 on error.
+Nearly all HTTP 500 bodies contain JSON data structured as follows:</p>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>reason</td><td>String</td><td>reason for the 500</td></tr>
+<tr><td>is_bug</td><td>bool</td><td>if this is a bug</td></tr>
+<tr><td>link</td><td>Option&lt;String&gt;</td><td>URL to report this at if this is a bug</td></tr>
+</tbody></table>
+<p>We cannot fix a 500 if you don't report it!
+Make sure to add as much info as you can to your report that way
+we can narrow it down as fast as possible.</p>
+<h3 id="u128-return-types"><a class="header" href="#u128-return-types"><code>u128</code> Return Types</a></h3>
+<p>128 bit unsigned integers are not available in some languages.
+To help you work around this, every field of type <code>u128</code> also comes with a <code>string</code> variant.
+For example: </p>
+<pre><code class="language-json">{
+  &quot;id&quot;: 953168419309560759306499915776,
+  &quot;id_string&quot;: &quot;953168419309560759306499915776&quot;
+}
+</code></pre>
+<p>If your language's JSON decoding implementation throws a fatal error upon finding a 128 bit integer,
+you must find a different library to decode the JSON that does not throw a fatal error.
+Otherwise, you can simply ignore the <code>id</code> field and only use <code>id_string</code>.</p>
 
                     </main>
 

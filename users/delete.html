@@ -135,10 +135,16 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="delete-a-user"><a class="header" href="#delete-a-user">Delete a User</a></h1>
-<p>In order to delete a user, you must send a DELETE request to <code>https://api.ferris.chat/v0/users/{user_id}</code>.</p>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>204 NO CONTENT
-</code></pre>
+<p><strong>WARNING</strong>: this action is immediate and irreversible.</p>
+<p>This will NOT delete your messages. A different endpoint for that is coming soon.</p>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>DELETE <code>/users/{user_id}</code></p>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="204-no-content"><a class="header" href="#204-no-content">204 No Content</a></h3>
+<h3 id="403-forbidden"><a class="header" href="#403-forbidden">403 Forbidden</a></h3>
+<p>Returned if the authenticated user is not the same as the one this delete targets.</p>
+<h3 id="404-not-found"><a class="header" href="#404-not-found">404 Not Found</a></h3>
+<p>Returned if the requested user cannot be found.</p>
 
                     </main>
 

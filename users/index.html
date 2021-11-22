@@ -139,8 +139,10 @@
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>u128</td><td>user id</td></tr>
 <tr><td>name</td><td>String</td><td>user name</td></tr>
-<tr><td>guilds</td><td>Vec<Guild></td><td>list of all the guilds a user is in</td></tr>
-<tr><td>flags</td><td>i64</td><td>user flags</td></tr>
+<tr><td>avatar</td><td>Option&lt;String&gt;</td><td>user avatar URL</td></tr>
+<tr><td>guilds</td><td>Vec&lt;Guild&gt;</td><td>list of all the guilds a user is in</td></tr>
+<tr><td>flags</td><td>UserFlags</td><td>user flags</td></tr>
+<tr><td>discriminator</td><td>i16</td><td>user discriminator: between 1 and 9999</td></tr>
 </tbody></table>
 
                     </main>

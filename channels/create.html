@@ -135,20 +135,15 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="create-a-channel"><a class="header" href="#create-a-channel">Create a Channel</a></h1>
-<p>In order to create a channel, you must send a POST request to <code>https://api.ferris.chat/v0/guilds/{guild_id}/channels</code>.</p>
-<h4 id="json-payload"><a class="header" href="#json-payload">JSON Payload</a></h4>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>POST <code>/guilds/{guild_id}/channels</code></p>
+<h3 id="payload"><a class="header" href="#payload">Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>channel's name</td></tr>
 </tbody></table>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 954985616424781059018601791488,
-    &quot;name&quot;: &quot;general&quot;,
-    &quot;guild_id&quot;: 953168419309560759306499915776
-}
-</code></pre>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="201-created"><a class="header" href="#201-created">201 Created</a></h3>
+<p>Payload: channel object describing the new channel.</p>
 
                     </main>
 

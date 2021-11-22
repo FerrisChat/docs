@@ -135,23 +135,23 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="create-a-user"><a class="header" href="#create-a-user">Create a User</a></h1>
-<p>In order to create a user, you must send a POST request to <code>https://api.ferris.chat/v0/users</code>.</p>
-<h4 id="json-payload"><a class="header" href="#json-payload">JSON Payload</a></h4>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>POST <code>/users</code></p>
+<h3 id="payload"><a class="header" href="#payload">Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td>username</td><td>String</td><td>user's preferred name</td></tr>
-<tr><td>email</td><td>String</td><td>a user's email</td></tr>
-<tr><td>password</td><td>String</td><td>a users password</td></tr>
+<tr><td>username</td><td>String</td><td>user name</td></tr>
+<tr><td>email</td><td>String</td><td>user email: note that no validation is done on this string</td></tr>
+<tr><td>password</td><td>String</td><td>user password: no restrictions</td></tr>
 </tbody></table>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>201 CREATED
-
-{
-    &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;hydrostaticcog&quot;,
-    &quot;guilds&quot;: null,
-    &quot;flags&quot;: 0
-}
-</code></pre>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="201-created"><a class="header" href="#201-created">201 Created</a></h3>
+<p>Payload: user object describing the created user.</p>
+<h3 id="409-conflict"><a class="header" href="#409-conflict">409 Conflict</a></h3>
+<p>Returned if any of the following are true:</p>
+<ul>
+<li>All available discriminators for this username are taken.</li>
+<li>A user with this email already exists.</li>
+</ul>
 
                     </main>
 

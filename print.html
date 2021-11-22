@@ -149,136 +149,118 @@ https://api.ferris.chat/v0
 <p>Currently there are no established bot development communities, so check back here soon!</p>
 <h3 id="ping-endpoint"><a class="header" href="#ping-endpoint">Ping Endpoint</a></h3>
 <p>If you just wish to see if the API is online, either check <a href="https://status.ferris.chat">the status page</a>, or request <code>GET https://api.ferris.chat/v0/ping</code>. It will return a <code>200 OK</code> if online.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="login"><a class="header" href="#login">Login</a></h1>
-<p>By logging in, you generate a token use for authentication. You MUST add this token to pretty much all of your requests.</p>
-<p>Send a POST request to <code>https://api.ferris.chat/v0/auth</code>.</p>
-<h4 id="request-headers"><a class="header" href="#request-headers">Request Headers</a></h4>
-<pre><code>Email: email
-Password: password
-</code></pre>
-<h4 id="example-response"><a class="header" href="#example-response">Example Response</a></h4>
-<pre><code>{
-    &quot;token&quot;: &quot;token&quot;
+<h3 id="implicit-return-codes"><a class="header" href="#implicit-return-codes">Implicit Return Codes</a></h3>
+<p>All endpoints should be assumed to return HTTP 500 on error.
+Nearly all HTTP 500 bodies contain JSON data structured as follows:</p>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>reason</td><td>String</td><td>reason for the 500</td></tr>
+<tr><td>is_bug</td><td>bool</td><td>if this is a bug</td></tr>
+<tr><td>link</td><td>Option&lt;String&gt;</td><td>URL to report this at if this is a bug</td></tr>
+</tbody></table>
+<p>We cannot fix a 500 if you don't report it!
+Make sure to add as much info as you can to your report that way
+we can narrow it down as fast as possible.</p>
+<h3 id="u128-return-types"><a class="header" href="#u128-return-types"><code>u128</code> Return Types</a></h3>
+<p>128 bit unsigned integers are not available in some languages.
+To help you work around this, every field of type <code>u128</code> also comes with a <code>string</code> variant.
+For example: </p>
+<pre><code class="language-json">{
+  &quot;id&quot;: 953168419309560759306499915776,
+  &quot;id_string&quot;: &quot;953168419309560759306499915776&quot;
 }
 </code></pre>
-<p>Reauthenticating will invalidate previous tokens.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="login-1"><a class="header" href="#login-1">Login</a></h1>
-<p>By logging in, you generate a token use for authentication. You MUST add this token to pretty much all of your requests.</p>
-<p>Send a POST request to <code>https://api.ferris.chat/v0/auth</code>.</p>
-<h4 id="request-headers-1"><a class="header" href="#request-headers-1">Request Headers</a></h4>
-<pre><code>Email: email
-Password: password
-</code></pre>
-<h4 id="example-response-1"><a class="header" href="#example-response-1">Example Response</a></h4>
-<pre><code>{
-    &quot;token&quot;: &quot;token&quot;
-}
-</code></pre>
-<p>Reauthenticating will invalidate previous tokens.</p>
+<p>If your language's JSON decoding implementation throws a fatal error upon finding a 128 bit integer,
+you must find a different library to decode the JSON that does not throw a fatal error.
+Otherwise, you can simply ignore the <code>id</code> field and only use <code>id_string</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authentication"><a class="header" href="#authentication">Authentication</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authentication-1"><a class="header" href="#authentication-1">Authentication</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="guilds"><a class="header" href="#guilds">Guilds</a></h1>
 <p>A Guild object is structured as follows:</p>
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>u128</td><td>guild id</td></tr>
 <tr><td>owner_id</td><td>u128</td><td>guild owner's id</td></tr>
 <tr><td>name</td><td>String</td><td>name of the guild</td></tr>
-<tr><td>channels</td><td>Vec<Channel></td><td>list of all the channels in a guild</td></tr>
-<tr><td>members</td><td>Vec<Member></td><td>list of all the members in a guild</td></tr>
+<tr><td>channels</td><td>Vec&lt;Channel&gt;</td><td>list of all the channels in a guild</td></tr>
+<tr><td>members</td><td>Vec&lt;Member&gt;</td><td>list of all the members in a guild</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-guild"><a class="header" href="#create-a-guild">Create a Guild</a></h1>
-<p>In order to create a guild, you must send a POST request to <code>https://api.ferris.chat/v0/guilds</code>.</p>
-<h4 id="json-payload"><a class="header" href="#json-payload">JSON Payload</a></h4>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>POST <code>/guilds</code></p>
+<h3 id="payload"><a class="header" href="#payload">Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>guild name (must be between 1 and 100 Unicode codepoints)</td></tr>
 </tbody></table>
-<h4 id="example-response-2"><a class="header" href="#example-response-2">Example Response</a></h4>
-<pre><code>201 CREATED
-
-{
-    &quot;id&quot;: 953168419309560759306499915776,
-    &quot;owner_id&quot;: 1,
-    &quot;name&quot;: &quot;FerrisChat&quot;,
-    &quot;channels&quot;: [
-        {
-            &quot;id&quot;: 954985616424781059018601791488,
-            &quot;name&quot;: &quot;general&quot;,
-            &quot;guild_id&quot;: 953168419309560759306499915776
-        }
-    ],
-    &quot;members&quot;: null
-}
-</code></pre>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<h3 id="201-created"><a class="header" href="#201-created">201 Created</a></h3>
+<p>Payload: guild object describing the created guild.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-guild"><a class="header" href="#get-a-guild">Get a Guild</a></h1>
-<p>In order to get a guild, you must send a GET request to <code>https://api.ferris.chat/v0/guilds/{guild_id}</code>.</p>
-<h4 id="query-params"><a class="header" href="#query-params">Query Params</a></h4>
+<h2 id="request-1"><a class="header" href="#request-1">Request</a></h2>
+<p>GET <code>/guilds/{guild_id}</code></p>
+<h3 id="query-parameters"><a class="header" href="#query-parameters">Query Parameters</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th><th>Default</th></tr></thead><tbody>
-<tr><td>members</td><td>boolean</td><td>decides whether a list of members is returned</td><td>false</td><td>false</td></tr>
-<tr><td>channels</td><td>boolean</td><td>decides whether a list of channels is returned</td><td>false</td><td>true</td></tr>
+<tr><td>members</td><td>boolean</td><td>return a list of members?</td><td>false</td><td>false</td></tr>
+<tr><td>channels</td><td>boolean</td><td>return a list of channels?</td><td>false</td><td>true</td></tr>
 </tbody></table>
-<h4 id="example-response-3"><a class="header" href="#example-response-3">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 953168419309560759306499915776,
-    &quot;owner_id&quot;: 1,
-    &quot;name&quot;: &quot;FerrisChat&quot;,
-    &quot;channels&quot;: [
-        {
-            &quot;id&quot;: 954985616424781059018601791488,
-            &quot;name&quot;: &quot;general&quot;,
-            &quot;guild_id&quot;: 953168419309560759306499915776
-        }
-    ],
-    &quot;members&quot;: null
-}
-</code></pre>
+<h2 id="response-1"><a class="header" href="#response-1">Response</a></h2>
+<h3 id="200-ok"><a class="header" href="#200-ok">200 OK</a></h3>
+<p>Payload: requested guild object</p>
+<h3 id="404-not-found"><a class="header" href="#404-not-found">404 Not Found</a></h3>
+<p>Payload: description of this missing object</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-guild"><a class="header" href="#delete-a-guild">Delete a Guild</a></h1>
-<p>In order to delete a guild, you must send a DELETE request to <code>https://api.ferris.chat/v0/guilds/{guild_id}</code>.</p>
-<h4 id="example-response-4"><a class="header" href="#example-response-4">Example Response</a></h4>
-<pre><code>204 NO CONTENT
-</code></pre>
+<h2 id="request-2"><a class="header" href="#request-2">Request</a></h2>
+<p>DELETE <code>/guilds/{guild_id}</code></p>
+<h2 id="response-2"><a class="header" href="#response-2">Response</a></h2>
+<h3 id="204-no-content"><a class="header" href="#204-no-content">204 No Content</a></h3>
+<h3 id="404-not-found-1"><a class="header" href="#404-not-found-1">404 Not Found</a></h3>
+<p>Payload: description of this missing object</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="users"><a class="header" href="#users">Users</a></h1>
 <p>A User object is structured as follows:</p>
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>u128</td><td>user id</td></tr>
 <tr><td>name</td><td>String</td><td>user name</td></tr>
-<tr><td>guilds</td><td>Vec<Guild></td><td>list of all the guilds a user is in</td></tr>
-<tr><td>flags</td><td>i64</td><td>user flags</td></tr>
+<tr><td>avatar</td><td>Option&lt;String&gt;</td><td>user avatar URL</td></tr>
+<tr><td>guilds</td><td>Vec&lt;Guild&gt;</td><td>list of all the guilds a user is in</td></tr>
+<tr><td>flags</td><td>UserFlags</td><td>user flags</td></tr>
+<tr><td>discriminator</td><td>i16</td><td>user discriminator: between 1 and 9999</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-user"><a class="header" href="#create-a-user">Create a User</a></h1>
-<p>In order to create a user, you must send a POST request to <code>https://api.ferris.chat/v0/users</code>.</p>
-<h4 id="json-payload-1"><a class="header" href="#json-payload-1">JSON Payload</a></h4>
+<h2 id="request-3"><a class="header" href="#request-3">Request</a></h2>
+<p>POST <code>/users</code></p>
+<h3 id="payload-1"><a class="header" href="#payload-1">Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td>username</td><td>String</td><td>user's preferred name</td></tr>
-<tr><td>email</td><td>String</td><td>a user's email</td></tr>
-<tr><td>password</td><td>String</td><td>a users password</td></tr>
+<tr><td>username</td><td>String</td><td>user name</td></tr>
+<tr><td>email</td><td>String</td><td>user email: note that no validation is done on this string</td></tr>
+<tr><td>password</td><td>String</td><td>user password: no restrictions</td></tr>
 </tbody></table>
-<h4 id="example-response-5"><a class="header" href="#example-response-5">Example Response</a></h4>
-<pre><code>201 CREATED
-
-{
-    &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;hydrostaticcog&quot;,
-    &quot;guilds&quot;: null,
-    &quot;flags&quot;: 0
-}
-</code></pre>
+<h2 id="response-3"><a class="header" href="#response-3">Response</a></h2>
+<h3 id="201-created-1"><a class="header" href="#201-created-1">201 Created</a></h3>
+<p>Payload: user object describing the created user.</p>
+<h3 id="409-conflict"><a class="header" href="#409-conflict">409 Conflict</a></h3>
+<p>Returned if any of the following are true:</p>
+<ul>
+<li>All available discriminators for this username are taken.</li>
+<li>A user with this email already exists.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-user"><a class="header" href="#get-a-user">Get a User</a></h1>
-<p>In order to get a user, you must send a GET request to <code>https://api.ferris.chat/v0/users/{user_id}</code>.</p>
-<h4 id="example-response-6"><a class="header" href="#example-response-6">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;hydrostaticcog&quot;,
-    &quot;guilds&quot;: [],
-    &quot;flags&quot;: 0
-}
-</code></pre>
+<h2 id="request-4"><a class="header" href="#request-4">Request</a></h2>
+<p>GET <code>/users/{user_id}</code></p>
+<h2 id="response-4"><a class="header" href="#response-4">Response</a></h2>
+<h3 id="200-ok-1"><a class="header" href="#200-ok-1">200 OK</a></h3>
+<p>Payload: user object</p>
+<p>Guilds are only returned if the authorized user is the same as the one fetching.</p>
+<h3 id="404-not-found-2"><a class="header" href="#404-not-found-2">404 Not Found</a></h3>
+<p>Returned if the requested user cannot be found.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-user"><a class="header" href="#delete-a-user">Delete a User</a></h1>
-<p>In order to delete a user, you must send a DELETE request to <code>https://api.ferris.chat/v0/users/{user_id}</code>.</p>
-<h4 id="example-response-7"><a class="header" href="#example-response-7">Example Response</a></h4>
-<pre><code>204 NO CONTENT
-</code></pre>
+<p><strong>WARNING</strong>: this action is immediate and irreversible.</p>
+<p>This will NOT delete your messages. A different endpoint for that is coming soon.</p>
+<h2 id="request-5"><a class="header" href="#request-5">Request</a></h2>
+<p>DELETE <code>/users/{user_id}</code></p>
+<h2 id="response-5"><a class="header" href="#response-5">Response</a></h2>
+<h3 id="204-no-content-1"><a class="header" href="#204-no-content-1">204 No Content</a></h3>
+<h3 id="403-forbidden"><a class="header" href="#403-forbidden">403 Forbidden</a></h3>
+<p>Returned if the authenticated user is not the same as the one this delete targets.</p>
+<h3 id="404-not-found-3"><a class="header" href="#404-not-found-3">404 Not Found</a></h3>
+<p>Returned if the requested user cannot be found.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channels"><a class="header" href="#channels">Channels</a></h1>
 <p>A Channel object is structured as follows:</p>
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -286,98 +268,91 @@ Password: password
 <tr><td>name</td><td>String</td><td>channel name</td></tr>
 <tr><td>guild_id</td><td>u128</td><td>id of the guild the channel is in</td></tr>
 </tbody></table>
+<h2 id="subsections"><a class="header" href="#subsections">Subsections</a></h2>
+<p><a href="channels/./create.html">Create</a></p>
+<p><a href="channels/./get.html">Get</a></p>
+<p><a href="channels/./edit.html">Edit</a></p>
+<p><a href="channels/./delete.html">Delete</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-channel"><a class="header" href="#create-a-channel">Create a Channel</a></h1>
-<p>In order to create a channel, you must send a POST request to <code>https://api.ferris.chat/v0/guilds/{guild_id}/channels</code>.</p>
-<h4 id="json-payload-2"><a class="header" href="#json-payload-2">JSON Payload</a></h4>
+<h2 id="request-6"><a class="header" href="#request-6">Request</a></h2>
+<p>POST <code>/guilds/{guild_id}/channels</code></p>
+<h3 id="payload-2"><a class="header" href="#payload-2">Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>name</td><td>String</td><td>channel's name</td></tr>
 </tbody></table>
-<h4 id="example-response-8"><a class="header" href="#example-response-8">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 954985616424781059018601791488,
-    &quot;name&quot;: &quot;general&quot;,
-    &quot;guild_id&quot;: 953168419309560759306499915776
-}
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-channel"><a class="header" href="#get-a-channel">Get a Channel</a></h1>
-<p>In order to get a channel, you must send a GET request to <code>https:://api.ferris.chat/v0/channel/{channel_id}</code>.</p>
-<h4 id="example-response-9"><a class="header" href="#example-response-9">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 954985616424781059018601791488,
-    &quot;name&quot;: &quot;general&quot;,
-    &quot;guild_id&quot;: 953168419309560759306499915776
-}
-</code></pre>
+<h2 id="response-6"><a class="header" href="#response-6">Response</a></h2>
+<h3 id="201-created-2"><a class="header" href="#201-created-2">201 Created</a></h3>
+<p>Payload: channel object describing the new channel.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fetch-a-channel"><a class="header" href="#fetch-a-channel">Fetch a Channel</a></h1>
+<h2 id="request-7"><a class="header" href="#request-7">Request</a></h2>
+<p>GET <code>/channels/{channel_id}/</code></p>
+<h2 id="response-7"><a class="header" href="#response-7">Response</a></h2>
+<h3 id="200-ok-2"><a class="header" href="#200-ok-2">200 OK</a></h3>
+<p>Payload: channel object describing the new channel.</p>
+<h3 id="404-not-found-4"><a class="header" href="#404-not-found-4">404 Not Found</a></h3>
+<p>Payload: JSON object describing the unknown channel.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-channel"><a class="header" href="#delete-a-channel">Delete a Channel</a></h1>
-<p>In order to delete a channel, you must send a DELETE request to <code>https://api.ferris.chat/v0/channels/{channel_id}</code>.</p>
-<h4 id="example-response-10"><a class="header" href="#example-response-10">Example Response</a></h4>
-<pre><code>204 NO CONTENT
-</code></pre>
+<h2 id="request-8"><a class="header" href="#request-8">Request</a></h2>
+<p>DELETE <code>/channels/{channel_id}</code></p>
+<h2 id="response-8"><a class="header" href="#response-8">Response</a></h2>
+<h3 id="204-no-content-2"><a class="header" href="#204-no-content-2">204 No Content</a></h3>
+<h3 id="404-not-found-5"><a class="header" href="#404-not-found-5">404 Not Found</a></h3>
+<p>Payload: JSON object describing the unknown channel.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="messages"><a class="header" href="#messages">Messages</a></h1>
 <p>A Message object is structured as follows:</p>
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>u128</td><td>message id</td></tr>
 <tr><td>content</td><td>String</td><td>message content</td></tr>
-<tr><td>author_id</td><td>u128</td><td>message author's id</td></tr>
 <tr><td>channel_id</td><td>u128</td><td>message channel's id</td></tr>
+<tr><td>author_id</td><td>u128</td><td>message author's id</td></tr>
+<tr><td>author</td><td>Option&lt;User&gt;</td><td>author of this message</td></tr>
+<tr><td>edited_at</td><td>Option&lt;PrimitiveDateTime&gt;</td><td>the last time this message was edited</td></tr>
+<tr><td>embeds</td><td>Vec&lt;Embed&gt;</td><td>a list of embeds in this message</td></tr>
+<tr><td>nonce</td><td>Option&lt;String&gt;</td><td>nonce of this message: is not stored in DB so is none everywhere except for the WebSocket event and returned object from HTTP</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="send-a-message"><a class="header" href="#send-a-message">Send a Message</a></h1>
-<p>In order to send a message, you must send a POST request to <code>https://api.ferris.chat/v0/channels/{channel_id}/messages</code>.</p>
-<h4 id="json-payload-3"><a class="header" href="#json-payload-3">JSON Payload</a></h4>
+<h2 id="request-9"><a class="header" href="#request-9">Request</a></h2>
+<p>POST <code>/channels/{channel_id}/messages</code></p>
+<h3 id="payload-3"><a class="header" href="#payload-3">Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td>content</td><td>String</td><td>message content (must be at or below 10240 characters)</td></tr>
+<tr><td>content</td><td>String</td><td>message content (1 to 10,240 Unicode codepoints)</td></tr>
+<tr><td>nonce</td><td>Option&lt;String&gt;</td><td>message nonce</td></tr>
 </tbody></table>
-<h4 id="example-response-11"><a class="header" href="#example-response-11">Example Response</a></h4>
-<pre><code>201 CREATED
-
-{
-    &quot;id&quot;: 962733210640370448862516609024,
-    &quot;content&quot;: &quot;FerrisChat FTW&quot;,
-    &quot;channel_id&quot;: 954985616424781059018601791488,
-    &quot;author_id&quot;: 1
-}
-</code></pre>
+<h2 id="response-9"><a class="header" href="#response-9">Response</a></h2>
+<h3 id="201-created-3"><a class="header" href="#201-created-3">201 Created</a></h3>
+<p>Payload: message object describing the created message.</p>
+<h3 id="400-bad-request"><a class="header" href="#400-bad-request">400 Bad Request</a></h3>
+<p>Returned if any of the following are true:</p>
+<ul>
+<li>Message content length is &gt; 10,240 Unicode codepoints</li>
+</ul>
+<h3 id="404-not-found-6"><a class="header" href="#404-not-found-6">404 Not Found</a></h3>
+<p>Payload: details about the missing object.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get-a-message"><a class="header" href="#get-a-message">Get a Message</a></h1>
-<p>In order to get a message, you must send a GET request to <code>https://api.ferris.chat/v0/channels/{channel_id}/messages/{message_id}</code>.</p>
-<h4 id="example-response-12"><a class="header" href="#example-response-12">Example Response</a></h4>
-<pre><code>200 OK
-
-{
-    &quot;id&quot;: 962733210640370448862516609024,
-    &quot;content&quot;: &quot;FerrisChat FTW&quot;,
-    &quot;channel_id&quot;: 954985616424781059018601791488,
-    &quot;author_id&quot;: 1
-}
-</code></pre>
+<h2 id="request-10"><a class="header" href="#request-10">Request</a></h2>
+<p>GET <code>/channels/{channel_id}/messages/{message_id}</code></p>
+<h2 id="response-10"><a class="header" href="#response-10">Response</a></h2>
+<h3 id="200-ok-3"><a class="header" href="#200-ok-3">200 OK</a></h3>
+<p>Payload: message object</p>
+<p>Note that <code>nonce</code> will be None.</p>
+<h3 id="404-not-found-7"><a class="header" href="#404-not-found-7">404 Not Found</a></h3>
+<p>Payload: details about the missing object.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delete-a-message"><a class="header" href="#delete-a-message">Delete a Message</a></h1>
-<p>In order to delete a message, you must send a DELETE request to <code>https://api.ferris.chat/v0/channels/{message_id}/messages/{message_id}</code>.</p>
-<h4 id="example-response-13"><a class="header" href="#example-response-13">Example Response</a></h4>
-<pre><code>204 NO CONTENT
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="websocket"><a class="header" href="#websocket">WebSocket</a></h1>
-<p>The FerrisChat websocket is connectable via the url sent by <code>https://api.ferris.chat/v0/ws/info</code>.
-It is important <strong>NOT HARDCODE</strong> this url, as it is subject to change.</p>
-<p>The following events are currently sent:</p>
-<table><thead><tr><th>Name</th><th>When Fired</th><th>Format</th></tr></thead><tbody>
-<tr><td>ChannelCreate</td><td>on channel create</td><td><code>channel_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>ChannelUpdate</td><td>on channel edit</td><td><code>channel_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>ChannelDelete</td><td>on channel delete</td><td><code>channel_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>MessageCreate</td><td>on message send</td><td><code>message_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>MessageUpdate</td><td>on message edit</td><td><code>message_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>MessageDelete</td><td>on message delete</td><td><code>message_{channel_id}_{guild_id}</code></td></tr>
-<tr><td>GuildCreate</td><td>on guild create</td><td><code>guild_{guild_id}</code></td></tr>
-<tr><td>GuildUpdate</td><td>on guild edit</td><td><code>guild_{guild_id}</code></td></tr>
-<tr><td>GuildDelete</td><td>on guild delete</td><td><code>guild_{guild_id}</code></td></tr>
-<tr><td>MemberCreate</td><td>on member join</td><td><code>member_{guild_id}</code></td></tr>
-<tr><td>MemberDelete</td><td>on member leave</td><td><code>member_{guild_id}</code></td></tr>
-<tr><td>InviteCreate</td><td>on invite create</td><td><code>invite_{guild_id}</code></td></tr>
-<tr><td>InviteUse</td><td>on invite use</td><td><code>invite_{guild_id}</code></td></tr>
-<tr><td>InviteDelete</td><td>on invite delete</td><td><code>invite_{guild_id}</code></td></tr>
-</tbody></table>
+<h2 id="request-11"><a class="header" href="#request-11">Request</a></h2>
+<p>DELETE <code>/channels/{channel_id}/messages/{message_id}</code></p>
+<h2 id="response-11"><a class="header" href="#response-11">Response</a></h2>
+<h3 id="200-ok-4"><a class="header" href="#200-ok-4">200 OK</a></h3>
+<p>Payload: message object describing the updated message.</p>
+<h3 id="400-bad-request-1"><a class="header" href="#400-bad-request-1">400 Bad Request</a></h3>
+<p>Returned if any of the following are true:</p>
+<ul>
+<li>Message content length is &gt; 10,240 Unicode codepoints</li>
+</ul>
+<h3 id="404-not-found-8"><a class="header" href="#404-not-found-8">404 Not Found</a></h3>
+<p>Payload: details about the missing object.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="websocket"><a class="header" href="#websocket">Websocket</a></h1>
+<p>The WebSocket is the main way to get updated on new data from FerrisChat.
+Some bots/clients will not need it, which is fine: there's no requirement to use it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="websocket-close-codes"><a class="header" href="#websocket-close-codes">WebSocket Close Codes</a></h1>
 <p>Sometimes sh*t happens. Connections get closed for random reasons. Here, most of the close reasons for the WebSocket are documented.</p>
 <h2 id="undocumented-codes"><a class="header" href="#undocumented-codes">Undocumented Codes</a></h2>
