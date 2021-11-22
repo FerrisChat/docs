@@ -1,23 +1,20 @@
 # Create a User
 
-In order to create a user, you must send a POST request to `https://api.ferris.chat/v0/users`.
+## Request
+POST `/users`
 
-#### JSON Payload
+### Payload
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| username | String | user's preferred name |
-| email | String | a user's email |
-| password | String | a users password |
+| username | String | user name |
+| email | String | user email: note that no validation is done on this string |
+| password | String | user password: no restrictions |
 
-#### Example Response
+## Response
+### 201 Created
+Payload: user object describing the created user.
 
-```
-201 CREATED
-
-{
-    "id": 1,
-    "name": "hydrostaticcog",
-    "guilds": null,
-    "flags": 0
-}
-```
+### 409 Conflict
+Returned if any of the following are true:
+* All available discriminators for this username are taken.
+* A user with this email already exists.

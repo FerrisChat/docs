@@ -1,9 +1,17 @@
 # Delete a User
 
-In order to delete a user, you must send a DELETE request to `https://api.ferris.chat/v0/users/{user_id}`.
+**WARNING**: this action is immediate and irreversible.
 
-#### Example Response
+This will NOT delete your messages. A different endpoint for that is coming soon.
 
-```
-204 NO CONTENT
-```
+## Request
+DELETE `/users/{user_id}`
+
+## Response
+### 204 No Content
+
+### 403 Forbidden
+Returned if the authenticated user is not the same as the one this delete targets.
+
+### 404 Not Found
+Returned if the requested user cannot be found.

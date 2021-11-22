@@ -1,9 +1,10 @@
 # Delete a Channel
 
-In order to delete a channel, you must send a DELETE request to `https://api.ferris.chat/v0/channels/{channel_id}`.
+## Request
+DELETE `/channels/{channel_id}`
 
-#### Example Response
+## Response
+### 204 No Content
 
-```
-204 NO CONTENT
-```
+### 404 Not Found
+Payload: JSON object describing the unknown channel.

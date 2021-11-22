@@ -1,9 +1,15 @@
 # Delete a Message
 
-In order to delete a message, you must send a DELETE request to `https://api.ferris.chat/v0/channels/{message_id}/messages/{message_id}`.
+## Request
+DELETE `/channels/{channel_id}/messages/{message_id}`
 
-#### Example Response
+## Response
+### 200 OK
+Payload: message object describing the updated message.
 
-```
-204 NO CONTENT
-```
+### 400 Bad Request
+Returned if any of the following are true:
+* Message content length is > 10,240 Unicode codepoints
+
+### 404 Not Found
+Payload: details about the missing object.

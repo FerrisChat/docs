@@ -1,9 +1,31 @@
-# Create a User
+# Verify a User's Email
 
-In order to create a user, you must send a POST request to `https://api.ferris.chat/v0/verify` with the Authorization header. An email will be received at the associated email address.
+# Part 1
+This sends an email to the email linked to the user's account.
 
-#### Example Response
+## Request
+POST `/verify`
 
-```
-204 NO CONTENT
-```
+## Response
+### 200 OK
+Payload: JSON object with one field: `message`
+
+### 409 Conflict
+Returned if any of the following are true:
+* This email is deemed unsafe to send to.
+* This email is invalid.
+
+# Part 2
+Clicking the link in the email sent to the user brings them here.
+
+## Request
+No `Authorization` header needed.
+
+GET `/verify/{token}`
+
+## Response
+### 200 OK
+Payload: JSON object with one field: `message`
+
+### 404 Not Found
+Returned if the token is not found. Note tokens expire after 1 hour.

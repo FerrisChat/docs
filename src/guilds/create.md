@@ -1,28 +1,13 @@
 # Create a Guild
 
-In order to create a guild, you must send a POST request to `https://api.ferris.chat/v0/guilds`.
+## Request
+POST `/guilds`
 
-#### JSON Payload
+### Payload
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | name | String | guild name (must be between 1 and 100 Unicode codepoints) |
 
-#### Example Response
-
-```
-201 CREATED
-
-{
-    "id": 953168419309560759306499915776,
-    "owner_id": 1,
-    "name": "FerrisChat",
-    "channels": [
-        {
-            "id": 954985616424781059018601791488,
-            "name": "general",
-            "guild_id": 953168419309560759306499915776
-        }
-    ],
-    "members": null
-}
-```
+## Response
+### 201 Created
+Payload: guild object describing the created guild.

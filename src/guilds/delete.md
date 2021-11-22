@@ -1,9 +1,10 @@
 # Delete a Guild
 
-In order to delete a guild, you must send a DELETE request to `https://api.ferris.chat/v0/guilds/{guild_id}`.
+## Request
+DELETE `/guilds/{guild_id}`
 
-#### Example Response
+## Response
+### 204 No Content
 
-```
-204 NO CONTENT
-```
+### 404 Not Found
+Payload: description of this missing object

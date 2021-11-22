@@ -6,5 +6,7 @@ A User object is structured as follows:
 | ---- | ---- | ----------- |
 | id | u128 | user id |
 | name | String | user name |
-| guilds | Vec<Guild> | list of all the guilds a user is in |
-| flags | i64 | user flags |
+| avatar | Option\<String> | user avatar URL |
+| guilds | Vec\<Guild> | list of all the guilds a user is in |
+| flags | UserFlags | user flags |
+| discriminator | i16 | user discriminator: between 1 and 9999 |

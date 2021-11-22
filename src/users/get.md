@@ -1,17 +1,13 @@
 # Get a User
 
-In order to get a user, you must send a GET request to `https://api.ferris.chat/v0/users/{user_id}`.
+## Request
+GET `/users/{user_id}`
 
+## Response
+### 200 OK
+Payload: user object
 
-#### Example Response
+Guilds are only returned if the authorized user is the same as the one fetching.
 
-```
-200 OK
-
-{
-    "id": 1,
-    "name": "hydrostaticcog",
-    "guilds": [],
-    "flags": 0
-}
-```
+### 404 Not Found
+Returned if the requested user cannot be found.
