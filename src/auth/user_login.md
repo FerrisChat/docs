@@ -27,12 +27,7 @@ Returned if any of the following happen:
 
 Payload: none
 
-### 401 Unauthorized
-Returned if user email matches but password does not.
-
-Payload: none
-
 ### 404 Not Found
-Returned if no email matches
+Returned if login credentials are incorrect
 
 Payload: none
