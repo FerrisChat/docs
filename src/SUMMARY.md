@@ -32,4 +32,8 @@
   - [Get History](./messages/history.md)
   - [Delete](./messages/delete.md)
 - [Websocket](./ws/README.md)
+    - [Inbound Events](./ws/events_inbound/README.md)
+    - [Outbound Events](./ws/events_outbound/README.md)
+    - [Bidirectional Events](./ws/events_bidir/README.md)
+    - [Connection Flow](./ws/flow.md)
     - [Close Codes](./ws/close_codes.md)
