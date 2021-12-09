@@ -4,11 +4,11 @@
 GET `/channels/{channel_id}/messages`
 
 ### Query Parameters
-| Field | Type | Description | Default |
-| ----- | ---- | ----------- | ------- |
-| limit | Option\<i64> | how many messages to fetch: None or 9,223,372,036,854,775,807 fetches all | None |
-| oldest_first | Option\<bool> | oldest messages first? | false |
-| offset | Option\<i64> | query cursor offset | 0 |
+| Field        | Type          | Description                                                               | Default   |
+|--------------|---------------|---------------------------------------------------------------------------|-----------|
+| limit        | Option\<i64>  | how many messages to fetch: None or 9,223,372,036,854,775,807 fetches all | None      |
+| oldest_first | Option\<bool> | oldest messages first?                                                    | false     |
+| offset       | Option\<i64>  | query cursor offset                                                       | 0         |
 
 ## Response
 ### 200 OK

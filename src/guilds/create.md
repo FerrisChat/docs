@@ -4,9 +4,9 @@
 POST `/guilds`
 
 ### Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| name | String | guild name (must be between 1 and 100 Unicode codepoints) |
+| Field   | Type   | Description                                               |
+|---------|--------|-----------------------------------------------------------|
+| name    | String | guild name (must be between 1 and 100 Unicode codepoints) |
 
 ## Response
 ### 201 Created

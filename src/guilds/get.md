@@ -4,10 +4,10 @@
 GET `/guilds/{guild_id}`
 
 ### Query Parameters
-| Field | Type | Description | Required | Default |
-| ----- | ---- | ----------- | -------- | ------- |
-| members | boolean | return a list of members? | false | false |
-| channels | boolean | return a list of channels? | false | true |
+| Field    | Type     | Description                 | Required | Default |
+|----------|----------|-----------------------------|----------|---------|
+| members  | boolean  | return a list of members?   | false    | false   |
+| channels | boolean  | return a list of channels?  | false    | true    |
 
 ## Response
 ### 200 OK

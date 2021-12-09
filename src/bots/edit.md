@@ -1,12 +1,12 @@
 # Bot Edit
 
 ## Request
-PATCH `/users/{user_id}/bots/{bot_id}`
+PATCH `/users/me/bots/{bot_id}`
 
 ### JSON Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| username | Option\<String> | bot username |
+| Field    | Type            | Description   |
+|----------|-----------------|---------------|
+| username | Option\<String> | bot username  |
 
 ## Response
 ### 200 OK

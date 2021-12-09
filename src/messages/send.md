@@ -4,10 +4,10 @@
 POST `/channels/{channel_id}/messages`
 
 ### Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| content | String | message content (1 to 10,240 Unicode codepoints) |
-| nonce | Option\<String> | message nonce |
+| Field   | Type            | Description                                      |
+|---------|-----------------|--------------------------------------------------|
+| content | String          | message content (1 to 10,240 Unicode codepoints) |
+| nonce   | Option\<String> | message nonce                                    |
 
 ## Response
 ### 201 Created
