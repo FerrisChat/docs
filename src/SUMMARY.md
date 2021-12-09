@@ -15,6 +15,7 @@
   - [Edit](./users/edit.md)
   - [Get](./users/get.md)
   - [Delete](./users/delete.md)
+  - [Get Me](./users/get_me.md)
 - [Guilds](./guilds/README.md)
   - [Create](./guilds/create.md)
   - [Edit](./guilds/edit.md)

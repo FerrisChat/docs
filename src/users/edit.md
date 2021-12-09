@@ -1,7 +1,7 @@
 # Edit a User
 
 ## Request
-PATCH `/users/{user_id}`
+PATCH `/users/me`
 
 ### Payload
 | Field    | Type            | Description       |

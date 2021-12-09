@@ -5,7 +5,7 @@
 This will NOT delete your messages. A different endpoint for that is coming soon.
 
 ## Request
-DELETE `/users/{user_id}`
+DELETE `/users/mw`
 
 ## Response
 ### 204 No Content
