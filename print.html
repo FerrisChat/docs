@@ -299,12 +299,13 @@ You do not need to prepend anything to the token.</p>
 <h2 id="request"><a class="header" href="#request">Request</a></h2>
 <p>POST <code>/auth</code></p>
 <h3 id="headers"><a class="header" href="#headers">Headers</a></h3>
-<ul>
-<li>Email: user's email</li>
-<li>Password: user's password</li>
-</ul>
+<p>None</p>
 <h3 id="payload"><a class="header" href="#payload">Payload</a></h3>
-<p>none</p>
+<pre><code class="language-json">{
+    &quot;email&quot;: &quot;email&quot;,
+    &quot;password&quot;: &quot;password&quot;
+}
+</code></pre>
 <h2 id="response"><a class="header" href="#response">Response</a></h2>
 <h3 id="200-ok"><a class="header" href="#200-ok">200 OK</a></h3>
 <p>Payload: JSON object with one field named <code>token</code>.</p>
@@ -329,7 +330,7 @@ You do not need to prepend anything to the token.</p>
 <li>Fetching a new token invalidates previous ones. This will not change.</li>
 </ul>
 <h2 id="request-1"><a class="header" href="#request-1">Request</a></h2>
-<p>POST <code>/users/{user_id}/bots/{bot_id}/auth</code></p>
+<p>POST <code>/users/me/bots/{bot_id}/auth</code></p>
 <h3 id="payload-1"><a class="header" href="#payload-1">Payload</a></h3>
 <p>None</p>
 <h2 id="example-response"><a class="header" href="#example-response">Example Response</a></h2>
@@ -384,7 +385,7 @@ and 4 per datacenter IP can be created</li>
 <p><a href="bots/./edit.html">Edit</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bot-create"><a class="header" href="#bot-create">Bot Create</a></h1>
 <h2 id="request-2"><a class="header" href="#request-2">Request</a></h2>
-<p>POST <code>/users/{user_id}/bots</code></p>
+<p>POST <code>/users/me/bots</code></p>
 <h3 id="json-payload"><a class="header" href="#json-payload">JSON Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>username</td><td>String</td><td>bot username</td></tr>
@@ -396,7 +397,7 @@ and 4 per datacenter IP can be created</li>
 <p>Payload: JSON body. This code means all possible discriminators have been taken.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bot-edit"><a class="header" href="#bot-edit">Bot Edit</a></h1>
 <h2 id="request-3"><a class="header" href="#request-3">Request</a></h2>
-<p>PATCH <code>/users/{user_id}/bots/{bot_id}</code></p>
+<p>PATCH <code>/users/me/bots/{bot_id}</code></p>
 <h3 id="json-payload-1"><a class="header" href="#json-payload-1">JSON Payload</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>username</td><td>Option&lt;String&gt;</td><td>bot username</td></tr>
@@ -416,7 +417,7 @@ and 4 per datacenter IP can be created</li>
 <p>Payload: JSON object describing the unknown item.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bot-delete"><a class="header" href="#bot-delete">Bot Delete</a></h1>
 <h2 id="request-4"><a class="header" href="#request-4">Request</a></h2>
-<p>DELETE <code>/users/{user_id}/bots/{bot_id}</code></p>
+<p>DELETE <code>/users/me/bots/{bot_id}</code></p>
 <h2 id="response-3"><a class="header" href="#response-3">Response</a></h2>
 <h3 id="204-no-content"><a class="header" href="#204-no-content">204 No Content</a></h3>
 <p>Payload: none</p>
@@ -729,6 +730,7 @@ and 4 per datacenter IP can be created</li>
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>u128</td><td>message id</td></tr>
 <tr><td>content</td><td>String</td><td>message content</td></tr>
+<tr><td>channel</td><td>Channel</td><td>message channel's object</td></tr>
 <tr><td>channel_id</td><td>u128</td><td>message channel's id</td></tr>
 <tr><td>author_id</td><td>u128</td><td>message author's id</td></tr>
 <tr><td>author</td><td>Option&lt;User&gt;</td><td>author of this message</td></tr>

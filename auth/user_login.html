@@ -142,12 +142,13 @@
 <h2 id="request"><a class="header" href="#request">Request</a></h2>
 <p>POST <code>/auth</code></p>
 <h3 id="headers"><a class="header" href="#headers">Headers</a></h3>
-<ul>
-<li>Email: user's email</li>
-<li>Password: user's password</li>
-</ul>
+<p>None</p>
 <h3 id="payload"><a class="header" href="#payload">Payload</a></h3>
-<p>none</p>
+<pre><code class="language-json">{
+    &quot;email&quot;: &quot;email&quot;,
+    &quot;password&quot;: &quot;password&quot;
+}
+</code></pre>
 <h2 id="response"><a class="header" href="#response">Response</a></h2>
 <h3 id="200-ok"><a class="header" href="#200-ok">200 OK</a></h3>
 <p>Payload: JSON object with one field named <code>token</code>.</p>
