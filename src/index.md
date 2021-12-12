@@ -8,7 +8,6 @@ We're so glad that you decided to check out our API and possibly build something
 
 The following endpoints may be used to connect:
 ```
-https://ferris.chat/api/v0 (deprecated)
 https://api.ferris.chat/v0
 ```
 
