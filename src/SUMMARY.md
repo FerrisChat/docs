@@ -10,6 +10,7 @@
   - [Create](./bots/create.md)
   - [Edit](./bots/edit.md)
   - [Delete](./bots/delete.md)
+  - [Get Own](./bots/get_own.md)
 - [Users](./users/README.md)
   - [Create](./users/create.md)
   - [Edit](./users/edit.md)
