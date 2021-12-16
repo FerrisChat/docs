@@ -15,6 +15,7 @@
   - [Edit](./users/edit.md)
   - [Get](./users/get.md)
   - [Delete](./users/delete.md)
+  - [Pronouns](./users/pronouns.md)
 - [Guilds](./guilds/README.md)
   - [Create](./guilds/create.md)
   - [Edit](./guilds/edit.md)
