@@ -4,9 +4,9 @@
 PATCH `/channels/{channel_id}`
 
 ### Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| name | Option\<String> | channel's name |
+| Field | Type            | Description    |
+|-------|-----------------|----------------|
+| name  | Option\<String> | channel's name |
 
 ## Response
 ### 200 OK

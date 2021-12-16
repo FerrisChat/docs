@@ -1,7 +1,7 @@
 # ChannelCreate
 
-| Field | Type | Description |
-| --- | --- | --- |
+| Field   | Type    | Description     |
+|---------|---------|-----------------|
 | channel | Channel | The new channel |
 
 ```json

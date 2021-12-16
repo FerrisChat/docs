@@ -8,7 +8,6 @@ We're so glad that you decided to check out our API and possibly build something
 
 The following endpoints may be used to connect:
 ```
-https://ferris.chat/api/v0 (deprecated)
 https://api.ferris.chat/v0
 ```
 
@@ -29,11 +28,11 @@ If you just wish to see if the API is online, either check [the status page](htt
 All endpoints should be assumed to return HTTP 500 on error.
 Nearly all HTTP 500 bodies contain JSON data structured as follows:
 
-| Name | Type | Description |
-| --- | --- | --- |
-| reason | String | reason for the 500 |
-| is_bug | bool | if this is a bug |
-| link | Option\<String> | URL to report this at if this is a bug |
+| Name   | Type            | Description                            |
+|--------|-----------------|----------------------------------------|
+| reason | String          | reason for the 500                     |
+| is_bug | bool            | if this is a bug                       |
+| link   | Option\<String> | URL to report this at if this is a bug |
 
 We cannot fix a 500 if you don't report it!
 Make sure to add as much info as you can to your report that way

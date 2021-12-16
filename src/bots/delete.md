@@ -1,7 +1,7 @@
 # Bot Delete
 
 ## Request
-DELETE `/users/{user_id}/bots/{bot_id}`
+DELETE `/users/me/bots/{bot_id}`
 
 ## Response
 ### 204 No Content

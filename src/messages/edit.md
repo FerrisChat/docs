@@ -4,10 +4,10 @@
 PATCH `/channels/{channel_id}/messages/{message_id}`
 
 ### Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| content | String | message content (1 to 10,240 Unicode codepoints) |
-| nonce | Option\<String> | message nonce |
+| Field   | Type            | Description                                      |
+|---------|-----------------|--------------------------------------------------|
+| content | String          | message content (1 to 10,240 Unicode codepoints) |
+| nonce   | Option\<String> | message nonce                                    |
 
 ## Response
 ### 200 OK

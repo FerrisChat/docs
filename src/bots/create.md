@@ -1,12 +1,12 @@
 # Bot Create
 
 ## Request
-POST `/users/{user_id}/bots`
+POST `/users/me/bots`
 
 ### JSON Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| username | String | bot username |
+| Field     | Type   | Description  |
+|-----------|--------|--------------|
+| username  | String | bot username |
 
 ## Response
 ### 201 Created

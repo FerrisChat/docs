@@ -5,11 +5,15 @@
 ## Request
 POST `/auth`
 ### Headers
-* Email: user's email
-* Password: user's password
+None
 
 ### Payload
-none
+```json
+{
+    "email": "email",
+    "password": "password"
+}
+```
 
 ## Response
 ### 200 OK

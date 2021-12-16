@@ -4,7 +4,7 @@
 * Fetching a new token invalidates previous ones. This will not change.
 
 ## Request
-POST `/users/{user_id}/bots/{bot_id}/auth`
+POST `/users/me/bots/{bot_id}/auth`
 
 ### Payload
 None

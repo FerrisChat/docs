@@ -6,10 +6,10 @@ If successful, you will receive an [IdentifyAccepted](../events_outbound/identif
 If there was an issue with authenticating you, the WebSocket connection will be closed.
 [See details on closes here.](../close_codes.md)
 
-| Field | Type | Default | Optional | Description |
-| --- | --- | --- | --- | --- |
-| token | String | None | false | The token from auth |
-| intents | i64 | None | false | Gateway intents (ignored for now) |
+| Field   | Type   | Default  | Optional   | Description                       |
+|---------|--------|----------|------------|-----------------------------------|
+| token   | String | None     | false      | The token from auth               |
+| intents | i64    | None     | false      | Gateway intents (ignored for now) |
 
 ```json
 {

@@ -4,10 +4,10 @@
 POST `/guilds/{guild_id}/invites`
 
 ### Payload
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| max_age | Option\<i64> | after how many seconds should this invite expire? |
-| max_uses | Option\<i16> | after how many uses should this invite expire? |
+| Field    | Type         | Description                                       |
+|----------|--------------|---------------------------------------------------|
+| max_age  | Option\<i64> | after how many seconds should this invite expire? |
+| max_uses | Option\<i16> | after how many uses should this invite expire?    |
 
 ## Response
 ### 201 Created
