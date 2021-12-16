@@ -37,6 +37,8 @@
   - [Edit](./channels/edit.md)
   - [Get](./channels/get.md)
   - [Delete](./channels/delete.md)
+  - [Typing Start](./channels/typing_start.md)
+  - [Typing End](./channels/typing_end.md)
 - [Messages](./messages/README.md)
   - [Send](./messages/send.md)
   - [Edit](./messages/edit.md)
