@@ -4,12 +4,13 @@
 PATCH `/users/me`
 
 ### Payload
-| Field    | Type            | Description       |
-|----------|-----------------|-------------------|
-| username | Option\<String> | new username      |
-| email    | Option\<String> | new email         |
-| password | Option\<String> | new password      |
-| avatar   | Option\<String> | URL to new avatar |
+| Field    | Type              | Description         |
+|----------|-------------------|---------------------|
+| username | Option\<String>   | new username        |
+| email    | Option\<String>   | new email           |
+| password | Option\<String>   | new password        |
+| avatar   | Option\<String>   | URL to new avatar   |
+| pronouns | Option\<Pronouns> | new set of pronouns |
 
 ## Response
 ### 200 OK

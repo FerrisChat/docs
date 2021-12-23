@@ -33,22 +33,22 @@ These are usually lower-level transport errors, but some are user error.
 ## 2xxx Codes
 These are user errors.
 
-| Code | Reason |
-| ---- | ------ |
-| 2001 | Invalid JSON |
+| Code | Reason                            |
+|------|-----------------------------------|
+| 2001 | Invalid JSON                      |
 | 2002 | More than 1 IDENTIFY payload sent |
-| 2003 | Invalid token |
+| 2003 | Invalid token                     |
 | 2004 | Data payload sent before IDENTIFY |
 
 ## 5xxx Codes
 These are internal server errors. These are almost always the result of a bug. If you get one of these (except for 5000), expect more.
 
-| Code | Reason |
-| ---- | ------ |
-| 5000 | Internal database error |
-| 5001 | JSON serialization failure |
-| 5002 | Redis pool not found |
-| 5003 | Database pool not found |
-| 5004 | User ID <-> Connection map not found |
+| Code | Reason                                        |
+|------|-----------------------------------------------|
+| 5000 | Internal database error                       |
+| 5001 | JSON serialization failure                    |
+| 5002 | Redis pool not found                          |
+| 5003 | Database pool not found                       |
+| 5004 | User ID <-> Connection map not found          |
 | 5005 | Internal JSON representation decoding failure |
 

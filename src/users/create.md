@@ -4,11 +4,12 @@
 POST `/users`
 
 ### Payload
-| Field    | Type   | Description                                                |
-|----------|--------|------------------------------------------------------------|
-| username | String | user name                                                  |
-| email    | String | user email: note that no validation is done on this string |
-| password | String | user password: no restrictions                             |
+| Field    | Type              | Description                                                |
+|----------|-------------------|------------------------------------------------------------|
+| username | String            | user name                                                  |
+| email    | String            | user email: note that no validation is done on this string |
+| password | String            | user password: no restrictions                             |
+| pronouns | Option\<Pronouns> | user's preferred set of pronouns                           |
 
 ## Response
 ### 201 Created

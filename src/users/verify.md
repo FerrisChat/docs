@@ -15,8 +15,7 @@ Returned if the user is already verified.
 
 ### 409 Conflict
 Returned if any of the following are true:
-* This email is deemed unsafe to send to.
-* This email is invalid.
+* This user is already verified.
 
 # Part 2
 Clicking the link in the email sent to the user brings them here.
