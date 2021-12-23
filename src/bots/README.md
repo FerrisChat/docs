@@ -11,6 +11,7 @@ and 4 per datacenter IP can be created
 * Bots can join unlimited servers
 * Bots need to be invited by a guild member
 * Bots cannot have relationships with users
+* Bots' snowflakes have the `BOT` model type instead of `USER`
 
 Besides this, no other limits are applied, meaning a bot can access the entire API that a user can.
 
