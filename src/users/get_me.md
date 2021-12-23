@@ -7,6 +7,5 @@ GET `/users/me`
 ### 200 OK
 Payload: user object
 
-
 ### 404 Not Found
-Returned if the requested user cannot be found. This is a bug
+Returned if the requested user cannot be found. This is a bug.
