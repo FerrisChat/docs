@@ -12,29 +12,29 @@ Group 0                                                         ^^^^^^^^ Group 2
 
 `snowflake >> 64`
 
-Time this snowflake was generated, in milliseconds since the Ferris Epoch (01/01/2022 00:00:00.000000 -0600)
+Time this snowflake was generated, in milliseconds since the Ferris Epoch (01/01/2022 00:00:00.000000 -0000)
 
 ```python
 # coding=utf-8
 import datetime
 
-snowflake = 953168419309560759306499915776
-# the Ferris Epoch is 1 trillion, 641 billion, 16 million, and 800 thousand milliseconds after the Unix Epoch
-ferris_epoch_offset = 1_641_016_800_000
+snowflake = 426882856118070100650360832
+# the Ferris Epoch is 1 trillion, 640 billion, 995 million, and 200 thousand milliseconds after the Unix Epoch
+ferris_epoch_offset = 1_640_995_200_000
 
 snowflake_timestamp_offset_ms = snowflake >> 64
 print(snowflake_timestamp_offset_ms)
-# 51671363548
+# 23141366
 
 snowflake_timestamp_ms = snowflake_timestamp_offset_ms + ferris_epoch_offset
 print(snowflake_timestamp_ms)
-# 1629508163548
+# 1641018341366
 snowflake_timestamp = snowflake_timestamp_ms / 1000
 print(snowflake_timestamp)
-# 1629508163.548
+# 1641018341.366
 snowflake_datetime = datetime.datetime.utcfromtimestamp(snowflake_timestamp)
 print(snowflake_datetime)
-# 2021-08-21 01:09:23.548000
+# 2022-01-01 06:25:41.366000
 ```
 
 ## Group 1
@@ -56,7 +56,7 @@ The type of snowflake.
 ```python
 # coding=utf-8
 import enum
-snowflake = 953168419309560759306499915776
+snowflake = 426882856118070100650360832
 
 class ModelType(enum.IntEnum):
     Guild = 0
@@ -85,11 +85,11 @@ Internal node counter. This is not of much use.
 
 ```python
 # coding=utf-8
-snowflake = 953168419309560759306499915776
+snowflake = 426882856118070100650360832
 
 internal_counter = snowflake >> 40 & 0b1111111111111111
 print(internal_counter)
-# 2
+# 24
 ```
 
 ## Group 3
@@ -102,7 +102,7 @@ The API version this snowflake was made on.
 
 ```python
 # coding=utf-8
-snowflake = 953168419309560759306499915776
+snowflake = 426882856118070100650360832
 
 api_version = snowflake >> 32 & 0b11111111
 print(api_version)
@@ -120,11 +120,11 @@ This is again not of much use.
 
 ```python
 # coding=utf-8
-snowflake = 953168419309560759306499915776
+snowflake = 426882856118070100650360832
 
 internal_id = snowflake >> 16 & 0b1111111111111111
 print(internal_id)
-# 0
+# 11132
 ```
 
 ## Group 5
@@ -138,7 +138,7 @@ These were used to identify early users, who could set these bits if they wanted
 
 ```python
 # coding=utf-8
-snowflake = 953168419309560759306499915776
+snowflake = 426882856118070100650360832
 
 unset = snowflake & 0b1111111111111111
 print(unset)
