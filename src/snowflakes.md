@@ -12,15 +12,15 @@ Group 0                                                         ^^^^^^^^ Group 2
 
 `snowflake >> 64`
 
-Time this snowflake was generated, in milliseconds since the Ferris Epoch (01/01/2020 00:00:00.000000+00:00)
+Time this snowflake was generated, in milliseconds since the Ferris Epoch (01/01/2022 00:00:00.000000 -0600)
 
 ```python
 # coding=utf-8
 import datetime
 
 snowflake = 953168419309560759306499915776
-# the Ferris Epoch is 1 trillion, 577 billion, 836 million, and 800 thousand milliseconds after the Unix Epoch
-ferris_epoch_offset = 1_577_836_800_000
+# the Ferris Epoch is 1 trillion, 641 billion, 16 million, and 800 thousand milliseconds after the Unix Epoch
+ferris_epoch_offset = 1_641_016_800_000
 
 snowflake_timestamp_offset_ms = snowflake >> 64
 print(snowflake_timestamp_offset_ms)
