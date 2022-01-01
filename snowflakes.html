@@ -143,13 +143,13 @@ Group 0                                                         ^^^^^^^^ Group 2
 <h2 id="group-0"><a class="header" href="#group-0">Group 0</a></h2>
 <p>64 bits</p>
 <p><code>snowflake &gt;&gt; 64</code></p>
-<p>Time this snowflake was generated, in milliseconds since the Ferris Epoch (01/01/2020 00:00:00.000000+00:00)</p>
+<p>Time this snowflake was generated, in milliseconds since the Ferris Epoch (01/01/2022 00:00:00.000000 -0600)</p>
 <pre><code class="language-python"># coding=utf-8
 import datetime
 
 snowflake = 953168419309560759306499915776
-# the Ferris Epoch is 1 trillion, 577 billion, 836 million, and 800 thousand milliseconds after the Unix Epoch
-ferris_epoch_offset = 1_577_836_800_000
+# the Ferris Epoch is 1 trillion, 641 billion, 16 million, and 800 thousand milliseconds after the Unix Epoch
+ferris_epoch_offset = 1_641_016_800_000
 
 snowflake_timestamp_offset_ms = snowflake &gt;&gt; 64
 print(snowflake_timestamp_offset_ms)
